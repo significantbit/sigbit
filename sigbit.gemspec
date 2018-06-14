@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.2.0"
   s.add_dependency "sass-rails"
   s.add_dependency "bootstrap", "~> 4.1"
-
+  s.add_dependency "acts_as_list"
+  s.add_dependency "ancestry"
+  s.add_dependency "hamlit-rails"
   s.add_development_dependency "pg"
 end
