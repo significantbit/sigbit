@@ -22,5 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency "acts_as_list"
   s.add_dependency "ancestry"
   s.add_dependency "hamlit-rails"
+  s.add_dependency "mobility", "~> 0.6.0"
   s.add_development_dependency "pg"
 end
