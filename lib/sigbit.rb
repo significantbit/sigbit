@@ -1,5 +1,13 @@
 require "sigbit/engine"
+require "sigbit/configuration"
 
 module Sigbit
-  # Your code goes here...
+  class << self
+    attr_reader :config
+
+    def configure
+      @config = Configuration.new
+      yield config
+    end
+  end
 end
