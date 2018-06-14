@@ -1,0 +1,22 @@
+$:.push File.expand_path("lib", __dir__)
+
+# Maintain your gem's version:
+require "sigbit/version"
+
+# Describe your gem and declare its dependencies:
+Gem::Specification.new do |s|
+  s.name        = "sigbit"
+  s.version     = Sigbit::VERSION
+  s.authors     = ["Johan André"]
+  s.email       = ["johan@significantbit.se"]
+  s.homepage    = "https://www.sigbit.se"
+  s.summary     = "Summary of Sigbit."
+  s.description = "Description of Sigbit."
+  s.license     = "MIT"
+
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+
+  s.add_dependency "rails", "~> 5.2.0"
+
+  s.add_development_dependency "pg"
+end
