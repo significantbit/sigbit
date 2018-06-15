@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      content_type/article: Standard article
+    attributes:
+      node:
+        contentable: Content type
