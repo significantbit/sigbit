@@ -9,6 +9,7 @@ PATH
       mobility (~> 0.6.0)
       rails (~> 5.2.0)
       sass-rails
+      simple_form
 
 GEM
   remote: https://rubygems.org/
@@ -167,6 +168,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple_form (4.0.0)
+      actionpack (> 4)
+      activemodel (> 4)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)

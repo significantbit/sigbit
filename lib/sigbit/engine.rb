@@ -2,13 +2,6 @@ Gem.loaded_specs["sigbit"].dependencies.each do |d|
   require d.name
 end
 
-Mobility.configure do |config|
-  config.default_backend = :container
-  config.accessor_method = :translates
-  config.query_method    = :i18n
-end
-
-
 module Sigbit
   class Engine < ::Rails::Engine
     isolate_namespace Sigbit
