@@ -1,0 +1,5 @@
+%h2 Edit node
+= simple_form_for(@node) do |form|
+  = form.input :menu_title
+  = render partial: 'sigbit/nodes/partials/content_type', locals: { form: form, node: @node }
+  = form.button :submit

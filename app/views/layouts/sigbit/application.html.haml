@@ -8,5 +8,11 @@
     = stylesheet_link_tag    "sigbit/application", media: "all"
     = javascript_include_tag "sigbit/application"
   %body
-    %h1 Backend
-    = yield
+    .container
+      %h1 Backend
+      %div
+        %ul.nav-pills
+          - I18n.available_locales.each do |locale|
+            %li.nav-item
+              = link_to "#{locale} #{locale == I18n.locale ? '<--' : ''}", url_for(locale: locale)
+      = yield
