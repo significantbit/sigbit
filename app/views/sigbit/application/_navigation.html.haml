@@ -1,0 +1,8 @@
+%nav.navbar.navbar-dark.bg-dark.navbar-expand-lg.navbar-light.bg-light
+  = link_to Sigbit::config.app_name, root_path, class: 'navbar-brand'
+  %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNavDropdown.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+
+    = render 'language_switcher'
