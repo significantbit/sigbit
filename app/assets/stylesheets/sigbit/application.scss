@@ -7,3 +7,10 @@
 @import 'bootstrap/functions';
 @import 'variables';
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+label {
+  font-size: 0.75em;
+  color: $gray-500;
+}
