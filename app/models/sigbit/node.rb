@@ -6,7 +6,7 @@ module Sigbit
     include Sigbit::NodeMethods::Tree
     include Sigbit::NodeMethods::Relations
 
-    translates :menu_title, :url, fallbacks: { en: :sv }, locale_accessors: true
+    translates :menu_title, :url, fallbacks: { sv: :en }, locale_accessors: true
 
     def contentable
       page_type.contentable
