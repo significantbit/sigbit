@@ -1,0 +1,4 @@
+%ul
+  %li
+    = link_to node_tree_item.menu_title, edit_node_path(node_tree_item.id), class: 'text-white'
+    = render partial: 'node_tree_item', collection: node_tree_item.children
