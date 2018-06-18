@@ -8,7 +8,7 @@ module Sigbit
     end
 
     included do
-      has_one :page_type, as: :contentable, dependent: :destroy
+      has_one :page_type, as: :contentable, class_name: "Sigbit::PageType", dependent: :destroy
       has_one :node, through: :page_type
 
       def to_partial_path
