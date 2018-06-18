@@ -8,12 +8,12 @@
     = stylesheet_link_tag    "sigbit/application", media: "all"
     = javascript_include_tag "sigbit/application"
   %body
-    = render 'navigation'
-    .container
-      %h1 Backend
-      %div
-        %ul.nav-pills
-          - I18n.available_locales.each do |locale|
-            %li.nav-item
-              = link_to "#{locale} #{locale == I18n.locale ? '<--' : ''}", url_for(locale: locale)
-      = yield
+    .d-flex.justify-items-stretch
+      #sidebar.w-25.bg-dark{style: 'height: 100vh'}
+        %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+          = link_to Sigbit::config.app_name, root_path, class: 'navbar-brand'
+        = render 'page_tree'
+      #main-content.flex-fill.bg-light
+        = render 'navigation'
+        .container-fluid.d-flex.flex-column
+          = yield
