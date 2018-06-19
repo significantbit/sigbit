@@ -27,5 +27,6 @@ Gem::Specification.new do |s|
   s.add_dependency "simple_form"
   s.add_dependency 'material_icons'
   s.add_dependency 'font-awesome-sass', '~> 5.0.13'
+
   s.add_development_dependency "pg"
 end
