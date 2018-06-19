@@ -14,3 +14,18 @@ label {
   font-size: 0.75em;
   color: $gray-500;
 }
+
+.publish-status {
+  right:0;
+  background-color: #090;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.nav-tree {
+  padding-left: 1.25em;
+
+  .bg {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
