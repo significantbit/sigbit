@@ -1,10 +1,17 @@
 = render partial: 'sigbit/nodes/partials/header', object: @node
-= render partial: 'sigbit/nodes/partials/tabs', object: @node
-
 = simple_form_for(@node, builder: MobilityFormBuilder, class: 'flex-grow-1') do |form|
-  .tab-content.bg-white.border-right.border-bottom.border-left.p-2.mb-4.h-100
-    .row
-      .col-md-8
-        = form.input :menu_title
-        = render partial: 'sigbit/nodes/partials/content_type', locals: { form: form, node: @node }
+
+  = tabs do |c|
+    - c.tab t('.page-content') do
+      = render partial: 'sigbit/nodes/partials/page_content', locals: { form: form, node: @node }
+
+    - c.tab t('.seo') do
+      = render partial: 'sigbit/nodes/partials/seo', locals: { form: form, node: @node }
+
+    - c.tab t('.sorting'), li_class: 'mr-auto' do
+      = render partial: 'sigbit/nodes/partials/sorting', locals: { form: form, node: @node }
+
+    - c.tab t('.settings') do
+      = render partial: 'sigbit/nodes/partials/settings', locals: { form: form, node: @node }
+
   = form.button :submit
