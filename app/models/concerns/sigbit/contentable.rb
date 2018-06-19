@@ -42,7 +42,7 @@ module Sigbit
     end
 
     def content_type_icon
-      "fa-file-text-o"
+      "flag"
     end
 
     def brief_description

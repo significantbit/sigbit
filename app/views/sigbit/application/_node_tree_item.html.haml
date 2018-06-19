@@ -1,4 +1,7 @@
-%ul
-  %li
-    = link_to node_tree_item.menu_title, edit_node_path(node_tree_item.id), class: 'text-white'
+%ul.nav.nav-list.nav-tree
+  %li.flex-fill
+    .d-flex.align-items-center.bg.pl-1.mr-3.mb-1
+      = icon('far', node_tree_item.contentable_icon, class: 'text-white mr-2')
+      = link_to node_tree_item.menu_title, edit_node_path(node_tree_item.id), class: 'text-white mr-auto'
+      = link_to icon('fas', 'ellipsis-h'), '#', class: 'btn btn-sm text-white ml-auto'
     = render partial: 'node_tree_item', collection: node_tree_item.children
