@@ -8,6 +8,8 @@ module Sigbit
 
     translates :menu_title, :url, fallbacks: { sv: :en }, locale_accessors: true
 
+    validates :menu_title, presence: true
+
     def contentable
       page_type.contentable
     end

@@ -1,0 +1,7 @@
+%tr
+  %td= user.email
+  %td= l(user.created_at, format: :long)
+  %td &nbsp;
+  %td.text-right
+    = link_to t('common.delete'), user_path(user), method: :delete, class: 'btn btn-sm btn-danger'
+    = link_to t('common.edit'), edit_user_path(user), class: 'btn btn-sm btn-primary'

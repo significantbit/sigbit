@@ -1,5 +1,5 @@
 module Sigbit
-  class NodesController < ApplicationController
+  class NodesController < Sigbit::ApplicationController
     def new
       @node = Sigbit::NewNodeForm.new parent_id: params[:parent_id]
       render "_new_form"

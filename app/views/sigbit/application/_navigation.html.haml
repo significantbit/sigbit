@@ -5,4 +5,6 @@
     %ul.navbar-nav.mr-auto
       %li.navbar-item
         = link_to t('.new_node'), new_node_path, class: 'nav-link'
+      %li.navbar-item
+        = link_to t('.users'), users_path, class: 'nav-link'
     = render 'language_switcher'

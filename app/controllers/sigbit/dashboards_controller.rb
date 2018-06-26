@@ -1,5 +1,5 @@
 module Sigbit
-  class DashboardsController < ApplicationController
+  class DashboardsController < Sigbit::ApplicationController
     def show
     end
   end

@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      content_type/article: Standard article
+      node: Sida
     attributes:
       node:
         contentable: Content type
+      user:
+        email: Epostadress

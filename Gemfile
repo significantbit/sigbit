@@ -16,3 +16,5 @@ gemspec
 gem 'rubocop-rails'
 gem 'i18n-tasks', '~> 0.9.21'
 gem 'i18n_generators'
+gem 'activestorage', require: 'active_storage/engine'
+
