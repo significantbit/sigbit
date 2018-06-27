@@ -7,11 +7,11 @@ class ImageWidgetInput < SimpleForm::Inputs::FileInput
             template.concat(
               template.image_tag(
                 template.main_app.url_for(
-                  resource.variant(resize: "100x100>")
+                  resource.variant(variant_options)
                 )
             ))
             template.concat(
-              template.link_to(template.attachment_path(resource_signed_id), method: :delete, remote: true) do
+              template.link_to(attachment_path, method: :delete, remote: true) do
               template.icon('fas', 'trash delete')
             end)
 
@@ -46,9 +46,16 @@ class ImageWidgetInput < SimpleForm::Inputs::FileInput
     end
   end
 
+  def attachment_path
+    template.attachment_path(resource_signed_id)
+  end
+
   def resource
     @builder.object.send(attribute_name)
   end
 
+  def variant_options
+    { combine_options: { resize: "100x100^", gravity: 'center', extent: '100x100' } }
+  end
 
 end

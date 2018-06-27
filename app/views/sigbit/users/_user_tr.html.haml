@@ -1,6 +1,6 @@
 %tr
   %td= user.email
-  %td= l(user.created_at, format: :long)
+  %td= user.created_at
   %td &nbsp;
   %td.text-right
     = link_to t('common.delete'), user_path(user), method: :delete, class: 'btn btn-sm btn-danger'
