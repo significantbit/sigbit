@@ -15,7 +15,7 @@ module Sigbit
     end
 
     initializer "sigbit", before: :load_config_initializers do |app|
-      Rails.application.routes.append do
+      Rails.application.routes.prepend do
         mount Sigbit::Engine, at: "/admin"
       end
     end
