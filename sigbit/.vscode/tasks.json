@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "command": "sh",
+  "args": ["-c"],
+  "tasks": [
+      {
+          "label": "Ruby format",
+          "type": "shell",
+          "presentation" : { "reveal": "never" },
+          "command": ["rubocop --auto-correct ${file}"]
+      },
+      {
+          "label": "ERB format",
+          "type": "shell",
+          "presentation" : { "reveal": "never" },
+          "command": ["htmlbeautifier ${file}"]
+      }
+  ]
+}
