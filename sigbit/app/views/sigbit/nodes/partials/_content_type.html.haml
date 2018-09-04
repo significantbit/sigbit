@@ -1,4 +1,0 @@
-#content-type
-  = form.simple_fields_for :page_type do |page_type|
-    = page_type.simple_fields_for(:contentable, builder: MobilityFormBuilder) do |contentable|
-      = render node.contentable, form: contentable

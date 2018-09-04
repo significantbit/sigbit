@@ -52,7 +52,7 @@ module Sigbit
     ##############
 
     def render_tabs_wrapper
-      content_tag :ul, class: "nav nav-tabs" do
+      content_tag :ul, class: "nav nav-tabs bg-white border-right border-top border-left pt-2 pb-2" do
         yield
       end
     end
@@ -71,7 +71,7 @@ module Sigbit
     end
 
     def render_panes_wrapper(options)
-      content_class = "tab-content bg-white border-right border-bottom border-left p-2 mb-4 h-100"
+      content_class = "tab-content bg-white border-right border-bottom border-left p-3 mb-4 h-100"
       content_class << " #{options[:content_class]}" if options[:content_class]
 
       content_tag :div, class: content_class do

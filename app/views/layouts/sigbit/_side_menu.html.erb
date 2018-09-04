@@ -1,0 +1,11 @@
+<nav class="nav-side-menu navbar-expand-lg">
+  <%= render partial: 'layouts/sigbit/side_menu_header' %>
+  <div id="menu-content" class="navbar-collapse collapse">
+    <div class="nav-side-container">
+      <%= link_to 'Skapa ny sida', new_node_path, class: 'nav-link' %>
+      <ul class="navbar-nav flex-column">
+        <%= render partial: 'sigbit/nodes/menu_item', collection: [Sigbit::Node.roots.first] %>
+      </ul>
+    </div>
+  </div>
+</nav>

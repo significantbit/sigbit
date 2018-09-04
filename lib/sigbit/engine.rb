@@ -1,6 +1,9 @@
+#require 'rrt'
 Gem.loaded_specs["sigbit"].dependencies.each do |d|
   require d.name
 end
+
+
 
 module Sigbit
   class Engine < ::Rails::Engine

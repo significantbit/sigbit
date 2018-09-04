@@ -1,3 +1,0 @@
-.btn-group.btn-group-sm
-  - I18n.available_locales.each do |locale|
-    = link_to "#{locale}", url_for(locale: locale), class: "btn btn-secondary #{'active' if locale == I18n.locale}"

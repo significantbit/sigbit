@@ -19,16 +19,16 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.2.0"
   s.add_dependency "sass-rails"
   s.add_dependency "jquery-rails"
-  s.add_dependency "bootstrap", "~> 4.1"
   s.add_dependency "acts_as_list"
   s.add_dependency "ancestry"
   s.add_dependency "hamlit-rails"
   s.add_dependency "mobility", "~> 0.6.0"
   s.add_dependency "simple_form"
-  s.add_dependency 'material_icons'
-  s.add_dependency 'font-awesome-sass', '~> 5.0.13'
   s.add_dependency 'devise'
-  s.add_dependency 'mini_magick'
-  s.add_dependency 'aws-sdk-s3'
+  s.add_dependency 'cocoon'
+  s.add_dependency 'wysiwyg-rails'
+  s.add_dependency 'kaminari'
+  s.add_dependency 'momentjs-rails'
+  s.add_dependency 'bootstrap4-datetime-picker-rails'
   s.add_development_dependency "pg"
 end

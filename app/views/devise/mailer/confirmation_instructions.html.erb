@@ -1,0 +1,18 @@
+<%= email_message_section do %>
+  <%= email_message_spacer 2 %>
+  <%= email_message_body_text do %>
+    Välkommen <%= @resource.email %>! Du kan verfiera din email genom att trycka på länken nedanför:
+  <% end %>
+
+  <%= email_message_button do %>
+    <%= link_to 'Verifiera mitt konto', confirmation_url(@resource, confirmation_token: @token), style: 'color: #fff;' %>
+  <% end %>
+
+  <%= email_message_spacer 2 %>
+
+  <%= email_message_small_text do %>
+    Har du frågor? Det är bara att mail oss.
+  <% end %>
+
+  <%= email_message_spacer 2 %>
+<% end %>
