@@ -2,7 +2,7 @@
 = simple_form_for(@node, builder: MobilityFormBuilder, class: 'flex-grow-1') do |form|
 
   = tabs do |c|
-    - c.tab t('.page-content') do
+    - c.tab t('.page_content') do
       = render partial: 'sigbit/nodes/partials/page_content', locals: { form: form, node: @node }
 
     - c.tab t('.seo') do

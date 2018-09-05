@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Sigbit
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    "sigbit/application", media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "sigbit/application", 'data-turbolinks-track': 'reload'
+  %body
+    .d-flex.justify-items-stretch
+      #sidebar.w-25.bg-dark{style: 'height: 100vh'}
+        %nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+          = link_to Sigbit::config.app_name, root_path, class: 'navbar-brand'
+        = render 'page_tree'
+      #main-content.flex-fill.bg-light
+        = render 'navigation'
+        .container-fluid.d-flex.flex-column
+          = yield

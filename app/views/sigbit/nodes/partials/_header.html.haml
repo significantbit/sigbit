@@ -1,6 +1,6 @@
 %div
   %header.pl-2.pr-2.pt-4.pb-4.d-flex.align-items-center
-    = fa_icon_tag("#{header.contentable_icon} fa-3x")
+    = fa_icon_tag("#{header.contentable_icon} fa-4x")
     %div.ml-3.mr-auto
       %h3.m-0= header.menu_title
       %p.m-0
@@ -11,5 +11,5 @@
       %span.border.border-dark.p-1.rounded
         %small.m-0.p-0
           = fa_icon_tag(header.contentable_icon)
-          = header.contentable.class
+          = t(header.contentable.class.name.underscore, scope: 'activerecord.models')
 

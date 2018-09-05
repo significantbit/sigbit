@@ -1,0 +1,7 @@
+%nav.nav-side-menu.navbar-expand-lg
+  = render partial: 'layouts/sigbit/side_menu_header'
+  #menu-content.navbar-collapse.collapse
+    .nav-side-container
+      = link_to 'Skapa ny sida', new_node_path, class: 'nav-link'
+      %ul.navbar-nav.flex-column
+        = render partial: 'sigbit/nodes/menu_item', collection: [Sigbit::Node.roots.first]

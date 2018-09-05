@@ -1,0 +1,20 @@
+- if alert
+  .alert.alert-error
+    %a.close{"data-dismiss" => "alert"} ×
+    = fa_icon_tag "remove"
+    = alert
+- if error
+  .alert.alert-danger
+    %a.close{"data-dismiss" => "alert"} ×
+    = fa_icon_tag "remove"
+    = error
+- if notice
+  .alert.alert-warning
+    %a.close{"data-dismiss" => "alert"} ×
+    = fa_icon_tag "info-sign"
+    = notice
+- if success
+  .alert.alert-success
+    %a.close{"data-dismiss" => "alert"} ×
+    = fa_icon_tag "info-sign"
+    = success

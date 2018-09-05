@@ -1,0 +1,25 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "no-cache", :name => "turbolinks-cache-control"}/
+    %title= [@title, Sigbit::config.app_name].compact.join(" - ")
+    = csrf_meta_tags
+    = stylesheet_link_tag "sigbit/application", media: "all", 'data-turbolinks-track': 'reload'
+    = yield :styles
+    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "/site.webmanifest", :rel => "manifest"}/
+    %link{:color => "#000000", :href => "/safari-pinned-tab.svg", :rel => "mask-icon"}/
+    %meta{:content => "#ffffff", :name => "msapplication-TileColor"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
+    = render 'layouts/sigbit/external_js_libs'
+    = yield :external_js_libs
+    = javascript_include_tag "sigbit/application", 'data-turbolinks-track': 'reload'
+    = yield :javascript
+    = yield :head
+  %body{:class => @body_class, "data-current-node" => @node ? @node.id : 0, "data-js-libs" => "bootstrap fitie metis forms sidenav prism clipboard bs-switch #{yield :js_libs}", "data-locale" => I18n.locale}
+    = yield

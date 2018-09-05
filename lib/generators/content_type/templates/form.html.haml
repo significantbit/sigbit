@@ -1,0 +1,5 @@
+.row
+  .col-sm-12.col-md-8
+    - attributes.each do |col|
+      = "<%= f.input :#{col.name.to_s} %
+      " %&gt;

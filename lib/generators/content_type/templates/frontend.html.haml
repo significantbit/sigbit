@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th Attribute
+      %th Value
+  %tbody
+    - attributes.each do |col|
+      - accessor = "#{name.downcase}.#{col.name.to_s}"
+      %tr
+        %td
+          %code= accessor
+        %td
+          = "<%= #{accessor} %
+          " %&gt;

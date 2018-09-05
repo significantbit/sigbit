@@ -12,6 +12,7 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require turbolinks
 //= require sigbit/rrt
 //= require cocoon
 //= require froala_editor.min.js
@@ -23,8 +24,48 @@
 //= require moment
 //= require moment/sv.js
 //= require tempusdominus-bootstrap-4.js
+//= require sigbit/html5sortable
 
 $(document).on('turbolinks:load', function () {
+
+  var a = sortable('.sortable-list', {
+    items: '.list-group-item',
+    handle: '.handle',
+  }).forEach(function(e,i) {
+    e.addEventListener('sortupdate', function(e) {
+
+      e.detail.origin.items.forEach(function(e, i) {
+        console.log(e);
+        $(e).data('position', i);
+
+      });
+
+      var url = $(e.target).data('sort-url');
+
+
+      /*
+      This event is triggered when the user stopped sorting and the DOM position has changed.
+
+      e.detail.item - {HTMLElement} dragged element
+
+      Origin Container Data
+      e.detail.origin.index - {Integer} Index of the element within Sortable Items Only
+      e.detail.origin.elementIndex - {Integer} Index of the element in all elements in the Sortable Container
+      e.detail.origin.container - {HTMLElement} Sortable Container that element was moved out of (or copied from)
+      e.detail.origin.itemsBeforeUpdate - {Array} Sortable Items before the move
+      e.detail.origin.items - {Array} Sortable Items after the move
+
+      Destination Container Data
+      e.detail.destination.index - {Integer} Index of the element within Sortable Items Only
+      e.detail.destination.elementIndex - {Integer} Index of the element in all elements in the Sortable Container
+      e.detail.destination.container - {HTMLElement} Sortable Container that element was moved out of (or copied from)
+      e.detail.destination.itemsBeforeUpdate - {Array} Sortable Items before the move
+      e.detail.destination.items - {Array} Sortable Items after the move
+      */
+  });
+  });
+
+  console.log(a);
 
   $('.datetime-picker').datetimepicker({
     locale: 'sv',

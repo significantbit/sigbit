@@ -1,4 +1,11 @@
-en:
+sv:
+  activerecord:
+    models:
+      sigbit/node: Sida
+      content_type/startpage: Startsida
+    attributes:
+      sigbit/node:
+        menu_title: Menynamn
   sigbit:
     common:
       delete: Radera
@@ -6,7 +13,10 @@ en:
   sigbit:
     nodes:
       form:
-        sorting: Sort stuff
+        page_content: Sidans innehåll
+        seo: SEO
+        sorting: Sortera undersidor
+        settings: Inställningar
     users:
       index:
         title: Alla användare

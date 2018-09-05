@@ -1,0 +1,19 @@
+= render layout: "layouts/sigbit/base" do
+  = render partial: "layouts/sigbit/side_menu"
+  .main-content
+    = render partial: 'layouts/sigbit/dashboard_top_nav'
+    - if content_for?(:description) || content_for(:actions)
+      .scaffold.page-header.d-flex.align-items-center.mb-1.pt-3.pb-3
+        .container-fluid
+          .row.align-items-center
+            .col-12.col-md-6
+              - if content_for?(:description)
+                %h2.m-0.tracking-tighter= @title
+                = yield :description
+            .col-12.col-md-6
+              - if content_for?(:actions)
+                = yield :actions
+      / /.page-header
+    .container-fluid.pt-2
+      = render "layouts/sigbit/flashes"
+      = yield

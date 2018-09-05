@@ -1,3 +1,10 @@
 .row
   .col-md-12
-    .alert.alert-info Här kommer sortering av noder
+    %ul.list-group.sortable-list{data: { sort_url: 'hej hej' }}
+      - node.children.each do |n|
+        %li.list-group-item{data: { position: "#{n.position}", id: "#{n.id}"}}
+          %span.handle.pr-4
+            = fa_icon_tag 'arrows-v'
+          = fa_icon_tag(n.contentable_icon)
+          = n.menu_title
+          = " (#{n.position})"

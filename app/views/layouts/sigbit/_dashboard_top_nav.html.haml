@@ -1,0 +1,12 @@
+%nav.navbar.navbar-expand-lg.my-0.justify-content-end.inspectable
+  / component-title: Top Nav Bar
+  %button.navbar-toggler.collapsed{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.d-none.d-lg-block
+        %a.SideNavToggle.nav-link{:href => "javascript:"}
+          = theme_icon_tag "menu"
+    = yield :navbar
+    %ul.nav.navbar-nav
+      = link_to 'Skapa sida', new_node_path, class: 'nav-link'
