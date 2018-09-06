@@ -29,7 +29,6 @@ $(document).on('turbolinks:load', function () {
     e.addEventListener('sortupdate', function(e) {
 
       e.detail.origin.items.forEach(function(e, i) {
-        console.log(e);
         $(e).data('position', i);
 
       });
@@ -59,7 +58,6 @@ $(document).on('turbolinks:load', function () {
   });
   });
 
-  console.log(a);
 
   $('.datetime-picker').datetimepicker({
     locale: 'sv',

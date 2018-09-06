@@ -17,5 +17,6 @@ module Sigbit
     def contentable_icon
       contentable.content_type_icon
     end
+
   end
 end

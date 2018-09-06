@@ -11,6 +11,22 @@ module Sigbit
 
         after_save :create_url
 
+        def self.json_tree(nodes)
+          nodes.map do |node, sub_nodes|
+            {
+              id: node.id,
+              title: node.menu_title,
+              position: node.position,
+              ancestry: node.ancestry,
+              #published: node.published?,
+              type: node.page_type.contentable_type,
+              icon: "fa-#{node.page_type.contentable.content_type_icon}",
+              contentable: node.page_type.contentable,
+              children: Sigbit::Node.json_tree(sub_nodes).compact
+            }
+          end
+        end
+
         def self.all_of_type(type = nil)
           klass = "ContentType::#{type.to_s.classify}"
           Sigbit::Node.joins(:page_type).where(page_types: { contentable_type: klass })
