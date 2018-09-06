@@ -1,0 +1,29 @@
+.attachinary_file_list {}
+
+.attachinary-file-item {
+  position: relative;
+  margin-top:10px;
+
+  img {
+    border : 3px solid #ddd;
+    padding: 2px;
+
+  }
+
+  .attachinary-remove-btn {
+    position: absolute;
+    bottom  : 1px;
+    right   : 16px;
+    display : none;
+    border-radius: 0;
+    i {
+      pointer-events: none;
+    }
+  }
+
+  &:hover {
+    .attachinary-remove-btn {
+      display: inline-block;
+    }
+  }
+}

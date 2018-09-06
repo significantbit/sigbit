@@ -1,7 +1,13 @@
 /*
  *= require sigbit/rrt
+ *= require sigbit/attachinary
  *= require_self
  */
+
+ @import "froala_editor.min";
+ //@import "admin/froala_style";
+ @import "plugins/table.min";
+ @import "tempusdominus-bootstrap-4";
 
 .logo {
   padding-top:10px;

@@ -30,5 +30,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari'
   s.add_dependency 'momentjs-rails'
   s.add_dependency 'bootstrap4-datetime-picker-rails'
+  s.add_dependency 'cloudinary'
   s.add_development_dependency "pg"
 end

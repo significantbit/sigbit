@@ -48,17 +48,17 @@ module Sigbit
 
       def all_children_not_of_type(type = nil)
         klass = symbol_to_class_name(type)
-        children.joins(:page_type).where.not(page_types: { contentable_type: klass })
+        children.joins(:page_type).where.not(sigbit_page_types: { contentable_type: klass })
       end
 
       def all_descendants_of_type(type = nil)
         klass = symbol_to_class_name(type)
-        descendants.joins(:page_type).where(page_types: { contentable_type: klass })
+        descendants.joins(:page_type).where(sigbit_page_types: { contentable_type: klass })
       end
 
       def all_siblings_of_type(type = nil)
         klass = symbol_to_class_name(type)
-        siblings.joins(:page_type).where(page_types: { contentable_type: klass })
+        siblings.joins(:page_type).where(sigbit_page_types: { contentable_type: klass })
       end
 
       private
