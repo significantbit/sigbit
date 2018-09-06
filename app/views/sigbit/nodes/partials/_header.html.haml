@@ -6,7 +6,7 @@
       %p.m-0
         %small
           URL:
-          = link_to "#{request.protocol}#{request.domain}#{":#{request.port}" if request.port}/#{I18n.locale}#{header.url}", header.url, target: '_blank', class: 'p-1'
+          = link_to "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", target: '_blank', class: 'p-1'
     %div
       %span.border.border-dark.p-1.rounded
         %small.m-0.p-0

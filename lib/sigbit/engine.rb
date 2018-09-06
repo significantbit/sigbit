@@ -3,7 +3,7 @@ Gem.loaded_specs["sigbit"].dependencies.each do |d|
   require d.name
 end
 
-
+#require "attachinary"
 
 module Sigbit
   class Engine < ::Rails::Engine
@@ -20,6 +20,7 @@ module Sigbit
     initializer "sigbit", before: :load_config_initializers do |app|
       Rails.application.routes.prepend do
         mount Sigbit::Engine, at: "/admin"
+        mount Attachinary::Engine => "/attachinary"
       end
     end
   end

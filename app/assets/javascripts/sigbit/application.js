@@ -25,9 +25,14 @@
 //= require moment/sv.js
 //= require tempusdominus-bootstrap-4.js
 //= require sigbit/html5sortable
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 
 $(document).on('turbolinks:load', function () {
-
+  $('.attachinary-input').attachinary();
   var a = sortable('.sortable-list', {
     items: '.list-group-item',
     handle: '.handle',
