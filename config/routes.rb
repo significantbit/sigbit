@@ -4,7 +4,6 @@ Sigbit::Engine.routes.draw do
     resources :nodes
     resources :users
     resource :settings
-    resources :attachments, only: :destroy
     root to: "dashboards#show"
   end
 end
