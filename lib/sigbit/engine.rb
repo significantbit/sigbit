@@ -2,8 +2,8 @@
 Gem.loaded_specs["sigbit"].dependencies.each do |d|
   require d.name
 end
-
-#require "attachinary"
+require "cloudinary"
+require "attachinary"
 
 module Sigbit
   class Engine < ::Rails::Engine
