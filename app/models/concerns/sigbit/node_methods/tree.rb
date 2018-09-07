@@ -22,7 +22,8 @@ module Sigbit
               type: node.page_type.contentable_type,
               icon: "fa-#{node.page_type.contentable.content_type_icon}",
               contentable: node.page_type.contentable,
-              children: Sigbit::Node.json_tree(sub_nodes).compact
+              children: Sigbit::Node.json_tree(sub_nodes).compact,
+              base_url: Sigbit::Engine.routes.url_helpers.node_path(node.id, locale: I18n.locale)
             }
           end
         end

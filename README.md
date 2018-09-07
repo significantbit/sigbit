@@ -1,28 +1,26 @@
-# Sigbit
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+# Sigbit CMS
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sigbit'
+gem 'sigbit', github: 'significantbit/sigbit'
 ```
+
+Also, for now add these gems to the application's Gemfile:
+
+```ruby
+gem 'attachinary' , github: 'significantbit/attachinary', branch: 'rails5'
+
+source "https://gems.rapidrailsthemes.com/gems" do
+  gem "rrt", "~> 1.1.0"
+end
+```
+
+Remember to put your Cloudinary config file in the config directory.
 
 And then execute:
 ```bash
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install sigbit
-```
-
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
