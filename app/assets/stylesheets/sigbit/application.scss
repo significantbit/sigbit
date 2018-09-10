@@ -21,3 +21,18 @@
   height:48px;
   background: #eee;
 }
+
+fieldset {
+  padding-bottom:1em;
+  border:1px solid #ddd;
+  padding-left: 1em;
+  padding-right:1em;
+  margin-bottom:1em;
+  legend {
+    font-size: 1em;
+    font-weight: bold;
+    background: #eee;
+    padding: 0.125em 0.5em;
+    border:1px solid #ddd;
+  }
+}

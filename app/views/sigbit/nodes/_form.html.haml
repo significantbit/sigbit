@@ -14,4 +14,4 @@
     - c.tab t('.settings') do
       = render partial: 'sigbit/nodes/partials/settings', locals: { form: form, node: @node }
 
-  = form.button :submit
+  = form.button :submit, class: 'btn btn-primary mb-4'
