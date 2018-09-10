@@ -5,6 +5,7 @@ end
 require "cloudinary"
 require "attachinary"
 require "attachinary/orm/active_record"
+
 module Sigbit
   class Engine < ::Rails::Engine
     isolate_namespace Sigbit
