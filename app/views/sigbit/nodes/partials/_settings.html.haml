@@ -1,3 +1,5 @@
 .row
   .col-md-12
     = form.input :menu_title
+    = form.input :parent_id, collection: Sigbit::Node.all, label_method: :menu_title
+

@@ -38,6 +38,12 @@ module Sigbit
       end
     end
 
+    def destroy
+      @node = Sigbit::Node.find params[:id]
+      @node.destroy
+      redirect_to root_path
+    end
+
     private
 
       def secure_params
