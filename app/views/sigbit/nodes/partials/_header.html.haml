@@ -8,8 +8,8 @@
           URL:
           = link_to "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", target: '_blank', class: 'p-1'
     %div
-      %span.border.border-dark.p-1.rounded
-        %small.m-0.p-0
-          = fa_icon_tag(header.contentable_icon)
-          = t(header.contentable.class.name.underscore, scope: 'activerecord.models')
+      %span.border.border-dark.p-2.rounded
+        = fa_icon_tag(header.contentable_icon)
+        &nbsp;
+        = t(header.contentable.class.name.underscore, scope: 'activerecord.models')
 
