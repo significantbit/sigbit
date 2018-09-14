@@ -1,5 +1,8 @@
 .row
   .col-md-12
+    = form.input :published_at, as: :date_time_picker, hint: 'Lämna fältet tomt om sidan ska förbli "ej publicerad".'
     = form.input :menu_title
+    = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: 'Välj under vilken "förälder" (huvudsida) som sidan ska ligga.'
+
     = form.input :parent_id, collection: Sigbit::Node.all, label_method: :menu_title
 

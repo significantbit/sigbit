@@ -1,5 +1,6 @@
 module Sigbit
   class NodesController < Sigbit::ApplicationController
+    skip_before_action :verify_authenticity_token, only: [:publish]
 
     def index
       #@nodes = SigbitNode.roots
@@ -42,6 +43,17 @@ module Sigbit
       @node = Sigbit::Node.find params[:id]
       @node.destroy
       redirect_to root_path
+    end
+
+    def publish
+      @node = Node.find params[:id]
+      if @node.published?
+        @node.unpublish!
+        @node.descendants.each(&:unpublish!) #where(hidden: false).each(&:unpublish!)
+      else
+        @node.publish!
+        @node.descendants.each(&:publish!) #where(hidden: false).each(&:publish!)
+      end
     end
 
     private

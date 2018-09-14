@@ -19,6 +19,7 @@ module Sigbit
       @id = Sigbit::Node.create! do |node|
         node.parent_id = @parent_id
         node.menu_title = @menu_title
+        node.published_at = DateTime.now
         node.url_sv = "dummy"
         node.page_type = Sigbit::PageType.new do |page_type|
           page_type.contentable = @contentable_type.constantize.new

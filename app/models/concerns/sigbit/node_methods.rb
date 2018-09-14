@@ -3,6 +3,7 @@ module Sigbit
     extend ActiveSupport::Concern
 
     included do
+
       has_one :page_type,
               class_name: "Sigbit::PageType",
               dependent: :destroy

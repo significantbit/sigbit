@@ -6,6 +6,8 @@ module Sigbit
 
 
       included do
+        publishable on: :published_at
+
         has_ancestry
         acts_as_list scope: [:ancestry]
 
@@ -18,7 +20,7 @@ module Sigbit
               title: node.menu_title,
               position: node.position,
               ancestry: node.ancestry,
-              #published: node.published?,
+              published: node.published?,
               type: node.page_type.contentable_type,
               icon: "fa-#{node.page_type.contentable.content_type_icon}",
               contentable: node.page_type.contentable,
@@ -76,6 +78,13 @@ module Sigbit
       def all_siblings_of_type(type = nil)
         klass = symbol_to_class_name(type)
         siblings.joins(:page_type).where(sigbit_page_types: { contentable_type: klass })
+      end
+
+      def find_submenu_root(content_type)
+        klass = symbol_to_class_name(content_type)
+        return self if page_type.contentable_type == klass
+        return nil if root?
+        parent.find_submenu_root(content_type)
       end
 
       private
