@@ -10,7 +10,10 @@ module Sigbit
 
     validates :menu_title, presence: true
 
-    default_scope { order(position: :asc)}
+    default_scope { order(position: :asc) }
+    scope :visible_in_menu, -> { where(visible_in_menu: true, hidden: false) }
+    scope :visible, -> { where(hidden: false) }
+    scope :show_in_footer, -> { where(show_in_footer: true, hidden: false) }
     def contentable
       page_type.contentable
     end
@@ -18,6 +21,5 @@ module Sigbit
     def contentable_icon
       contentable.content_type_icon
     end
-
   end
 end

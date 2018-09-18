@@ -52,5 +52,9 @@ module Sigbit
     def searchable_data
       []
     end
+
+    def should_show_up_in_menus
+      true
+    end
   end
 end

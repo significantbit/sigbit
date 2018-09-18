@@ -13,7 +13,8 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'rubocop-rails'
+#gem 'rubocop-rails'
 gem 'i18n-tasks', '~> 0.9.21'
 gem 'i18n_generators'
 
+gem 'attachinary' , github: 'significantbit/attachinary', branch: 'rails5'
