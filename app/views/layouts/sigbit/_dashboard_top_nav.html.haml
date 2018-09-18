@@ -9,4 +9,7 @@
           = theme_icon_tag "menu"
     = yield :navbar
     %ul.nav.navbar-nav
-      = link_to 'Skapa sida', new_node_path, class: 'nav-link'
+      %li.nav-item
+        = link_to 'Skapa sida', new_node_path, class: 'nav-link'
+      %li.nav-item
+        = link_to 'Användare', users_path, class: 'nav-link'
