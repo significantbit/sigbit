@@ -6,7 +6,8 @@
       %p.m-0
         %small
           URL:
-          = link_to "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", "#{request.protocol}#{request.domain}#{":#{request.port}" if Rails.env.development?}/#{I18n.locale}#{header.url}", target: '_blank', class: 'p-1'
+          - link_to_page = "#{request.protocol}#{request.host}#{":#{request.port}" if Rails.env.development?}#{header.link_to_page}"
+          = link_to link_to_page, link_to_page, target: '_blank'
     %div
       %span.border.border-dark.p-2.rounded
         = fa_icon_tag(header.contentable_icon)

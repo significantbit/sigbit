@@ -14,12 +14,17 @@ module Sigbit
     scope :visible_in_menu, -> { where(visible_in_menu: true, hidden: false) }
     scope :visible, -> { where(hidden: false) }
     scope :show_in_footer, -> { where(show_in_footer: true, hidden: false) }
+
     def contentable
       page_type.contentable
     end
 
     def contentable_icon
       contentable.content_type_icon
+    end
+
+    def link_to_page
+      url
     end
   end
 end
