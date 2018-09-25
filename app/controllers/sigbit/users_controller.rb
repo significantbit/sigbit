@@ -23,7 +23,7 @@ module Sigbit
       render "_form"
     end
 
-    def create
+    def update
       @user = Sigbit::User.find params[:id]
       if @user.update secure_params
         redirect_to users_path, success: t(".success")
