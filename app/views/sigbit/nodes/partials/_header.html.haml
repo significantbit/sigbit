@@ -6,7 +6,7 @@
       %p.m-0
         %small
           URL:
-          - link_to_page = "#{request.protocol}#{request.host}#{":#{request.port}" if Rails.env.development?}#{header.link_to_page}"
+          - link_to_page = "#{request.protocol}#{request.subdomains.join('.')}#{request.host}#{":#{request.port}" if Rails.env.development?}#{header.link_to_page}"
           = link_to link_to_page, link_to_page, target: '_blank'
     %div
       %span.border.border-dark.p-2.rounded
