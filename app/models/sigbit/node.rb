@@ -1,5 +1,4 @@
 require "concerns/sigbit/node_methods/relations"
-
 module Sigbit
   class Node < ApplicationRecord
     extend Mobility
@@ -25,6 +24,16 @@ module Sigbit
 
     def link_to_page
       url
+    end
+
+    def to_meta_tags
+      {
+        site: Sigbit::config.app_name,
+        reverse: true,
+        title: contentable.title.present? ? contentable.title : menu_title,
+        keywords: meta_keywords.present? ? meta_keywords : Sigbit::config.default_meta_keywords,
+        description: meta_description.present? ? meta_description : Sigbit::config.default_meta_description,
+      }
     end
   end
 end
