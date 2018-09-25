@@ -7,6 +7,7 @@
 
     - c.tab t('.seo') do
       = render partial: 'sigbit/nodes/partials/seo', locals: { form: form, node: @node }
+
     - if @node.children.present?
       - c.tab t('.sorting') do
         = render partial: 'sigbit/nodes/partials/sorting', locals: { form: form, node: @node }
