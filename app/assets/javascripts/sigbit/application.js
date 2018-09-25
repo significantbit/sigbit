@@ -20,21 +20,19 @@
 //= require attachinary
 //= require sigbit/attachinary_template
 
-$(document).on('turbolinks:load', function () {
+$(document).on('turbolinks:load', function() {
   $('.attachinary-input').attachinary();
   var a = sortable('.sortable-list', {
     items: '.list-group-item',
-    handle: '.handle',
-  }).forEach(function(e,i) {
+    handle: '.handle'
+  }).forEach(function(e, i) {
     e.addEventListener('sortupdate', function(e) {
-
       e.detail.origin.items.forEach(function(e, i) {
         $(e).data('position', i);
-
       });
 
       var url = $(e.target).data('sort-url');
-
+      console.log('Data data');
 
       /*
       This event is triggered when the user stopped sorting and the DOM position has changed.
@@ -55,28 +53,29 @@ $(document).on('turbolinks:load', function () {
       e.detail.destination.itemsBeforeUpdate - {Array} Sortable Items before the move
       e.detail.destination.items - {Array} Sortable Items after the move
       */
+    });
   });
-  });
-
 
   $('.datetime-picker').datetimepicker({
     locale: 'sv',
-    keepOpen: true,
+    keepOpen: true
   });
   $('.date-picker').datetimepicker({
     locale: 'sv',
     format: 'L',
-    keepOpen: true,
+    keepOpen: true
   });
   $('.time-picker').datetimepicker({
     locale: 'sv',
     format: 'LT',
-    keepOpen: true,
+    keepOpen: true
   });
 
-  $('#accordion').find('button').on('click', function(event) {
-    event.preventDefault();
-  });
+  $('#accordion')
+    .find('button')
+    .on('click', function(event) {
+      event.preventDefault();
+    });
 
   $('.wysiwyg-editor').froalaEditor({
     key: 'QA4A3A3A15hC7D6E6C5D2E3B2C6A6D6ctigoehvogD-11ogF4I-7k==',
@@ -84,32 +83,53 @@ $(document).on('turbolinks:load', function () {
     paragraphFormat: {
       N: 'Normal',
       H3: 'Underrubrik',
-      H4: 'Underunderrubrik',
+      H4: 'Underunderrubrik'
     },
     tableStyles: {
-      'table table-striped table-bordered': 'Normal',
+      'table table-striped table-bordered': 'Normal'
     },
     tableEditButtons: [
-      'tableHeader', 'tableRemove', '|', 'tableRows', 'tableColumns', '-',
-      'tableStyle', 'tableCells', 'tableCellHorizontalAlign'],
+      'tableHeader',
+      'tableRemove',
+      '|',
+      'tableRows',
+      'tableColumns',
+      '-',
+      'tableStyle',
+      'tableCells',
+      'tableCellHorizontalAlign'
+    ],
 
-    toolbarButtons: ['undo', 'redo' , '|','bold', 'italic', 'underline', 'strikeThrough',
-      'paragraphFormat', 'clearFormatting', 'insertTable', 'insertLink', 'formatOL', 'formatUL'],
+    toolbarButtons: [
+      'undo',
+      'redo',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      'strikeThrough',
+      'paragraphFormat',
+      'clearFormatting',
+      'insertTable',
+      'insertLink',
+      'formatOL',
+      'formatUL'
+    ],
 
     linkEditButtons: ['linkOpen', 'linkStyle', 'linkEdit', 'linkRemove'],
 
     linkAttributes: {
-  class: 'Class'
-},
+      class: 'Class'
+    }
   });
 
   var url = document.location.toString();
   if (url.match('#')) {
-      $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
   }
 
   // Change hash for page-reload
-  $('.nav-tabs a').on('shown.bs.tab', function (e) {
+  $('.nav-tabs a').on('shown.bs.tab', function(e) {
     history.replaceState(null, null, e.target.hash);
-  })
+  });
 });
