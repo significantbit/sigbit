@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    sigbit (0.1.4)
+    sigbit (0.1.5)
       acts_as_list
       ancestry
       bootstrap4-datetime-picker-rails

@@ -32,12 +32,12 @@ module Sigbit
 
         def self.all_of_type(type = nil)
           klass = "ContentType::#{type.to_s.classify}"
-          Sigbit::Node.joins(:page_type).where(page_types: { contentable_type: klass })
+          Sigbit::Node.joins(:page_type).where(sigbit_page_types: { contentable_type: klass })
         end
 
         def self.all_of_type_not(type = nil)
           klass = "ContentType::#{type.to_s.classify}"
-          Sigbit::Node.joins(:page_type).where.not(page_types: { contentable_type: klass })
+          Sigbit::Node.joins(:page_type).where.not(sigbit_page_types: { contentable_type: klass })
         end
 
         def url_friendly_slug

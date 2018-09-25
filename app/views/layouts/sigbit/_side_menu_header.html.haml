@@ -4,6 +4,6 @@
     .profile-body
       %h6= current_user.email
       .user-links
-        = link_to 'Logga ut', destroy_user_session_path, method: :delete
+        = link_to 'Logga ut', sigbit.destroy_user_session_path, method: :delete
   %button.navbar-toggler.collapsed{"aria-controls" => "menu-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#menu-content", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
