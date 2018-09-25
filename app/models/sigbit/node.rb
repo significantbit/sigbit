@@ -26,11 +26,8 @@ module Sigbit
       request = Sigbit::Current.request
       [
         request.protocol,
-        " - ",
         request.subdomains[0].present? ? "#{request.subdomains[0]}." : nil,
-        " - ",
         request.domain,
-        " - ",
         Rails.env.development? ? ":#{request.port}" : nil,
         "/",
         I18n.locale,
