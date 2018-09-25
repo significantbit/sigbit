@@ -23,7 +23,16 @@ module Sigbit
     end
 
     def link_to_page
-      url
+      request = Sigbit::Current.request
+      [
+        request.protocol,
+        request.subdomains,
+        request.host,
+        Rails.env.development? ? ":#{request.port}" : nil,
+        "/",
+        I18n.locale,
+        url
+      ].join("")
     end
 
     def to_meta_tags

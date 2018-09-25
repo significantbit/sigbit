@@ -6,6 +6,8 @@ module Sigbit
     before_action :authenticate_user!
     before_action :set_locale
     before_action :set_nodes_tree
+    before_action :set_current_attributes
+
     add_flash_types :success, :error
     layout "layouts/sigbit/sidenav"
 
@@ -36,6 +38,11 @@ module Sigbit
           result += ancestry_options(sub_items, &block)
         end
         result
+      end
+
+      def set_current_attributes
+        Sigbit::Current.user = current_user
+        Sigbit::Current.request = request
       end
   end
 end
