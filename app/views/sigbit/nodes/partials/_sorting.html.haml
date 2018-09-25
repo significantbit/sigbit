@@ -1,13 +1,16 @@
 .row
   .col-md-12
-    %ul.list-group.sortable-list{data: { sort_url: node_sort_path(node) }}
-      - node.children.each do |n|
-        %li.list-group-item{data: { position: "#{n.position}", id: "#{n.id}"}}
-          %span.handle.pr-4
-            = fa_icon_tag 'arrows-v'
-          = fa_icon_tag(n.contentable_icon)
-          = n.menu_title
-          %small.text-muted
-            (
-            = t(n.contentable.class.name.underscore, scope: 'activerecord.models')
-            )
+    - if node.children.present?
+      %ul.list-group.sortable-list{data: { sort_url: node_sort_path(node) }}
+        - node.children.each do |n|
+          %li.list-group-item{data: { position: "#{n.position}", id: "#{n.id}"}}
+            %span.handle.pr-4
+              = fa_icon_tag 'arrows-v'
+            = fa_icon_tag(n.contentable_icon)
+            = n.menu_title
+            %small.text-muted
+              (
+              = t(n.contentable.class.name.underscore, scope: 'activerecord.models')
+              )
+    - else
+      %p Inga undersidor finns att sortera

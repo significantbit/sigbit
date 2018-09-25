@@ -7,11 +7,11 @@
 
     - c.tab t('.seo') do
       = render partial: 'sigbit/nodes/partials/seo', locals: { form: form, node: @node }
+    - if @node.children.present?
+      - c.tab t('.sorting') do
+        = render partial: 'sigbit/nodes/partials/sorting', locals: { form: form, node: @node }
 
-    - c.tab t('.sorting'), li_class: 'mr-auto' do
-      = render partial: 'sigbit/nodes/partials/sorting', locals: { form: form, node: @node }
-
-    - c.tab t('.settings') do
+    - c.tab t('.settings'), li_class: 'ml-auto' do
       = render partial: 'sigbit/nodes/partials/settings', locals: { form: form, node: @node }
 
   = form.button :submit, class: 'btn btn-primary mb-4'
