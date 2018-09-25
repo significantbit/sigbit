@@ -27,32 +27,25 @@ $(document).on('turbolinks:load', function() {
     handle: '.handle'
   }).forEach(function(e, i) {
     e.addEventListener('sortupdate', function(e) {
+      const data = [];
       e.detail.origin.items.forEach(function(e, i) {
-        $(e).data('position', i);
+        data.push({ id: $(e).data('id'), position: i + 1 });
       });
 
       var url = $(e.target).data('sort-url');
-      console.log('Data data');
-
-      /*
-      This event is triggered when the user stopped sorting and the DOM position has changed.
-
-      e.detail.item - {HTMLElement} dragged element
-
-      Origin Container Data
-      e.detail.origin.index - {Integer} Index of the element within Sortable Items Only
-      e.detail.origin.elementIndex - {Integer} Index of the element in all elements in the Sortable Container
-      e.detail.origin.container - {HTMLElement} Sortable Container that element was moved out of (or copied from)
-      e.detail.origin.itemsBeforeUpdate - {Array} Sortable Items before the move
-      e.detail.origin.items - {Array} Sortable Items after the move
-
-      Destination Container Data
-      e.detail.destination.index - {Integer} Index of the element within Sortable Items Only
-      e.detail.destination.elementIndex - {Integer} Index of the element in all elements in the Sortable Container
-      e.detail.destination.container - {HTMLElement} Sortable Container that element was moved out of (or copied from)
-      e.detail.destination.itemsBeforeUpdate - {Array} Sortable Items before the move
-      e.detail.destination.items - {Array} Sortable Items after the move
-      */
+      $.ajax({
+        url: url,
+        type: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify({ order: data })
+      }).then(function() {
+        if (
+          window.NodesApplication !== undefined &&
+          window.NodesApplication !== null
+        ) {
+          NodesApplication.reload();
+        }
+      });
     });
   });
 

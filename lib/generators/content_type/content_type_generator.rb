@@ -12,11 +12,11 @@ class ContentTypeGenerator < Rails::Generators::NamedBase
   end
 
   def create_form
-    template "form.html.erb", File.join("app/views/sigbit/content_type", "_#{name.downcase}.html.erb")
+    template "form.html.erb", File.join("app/views/sigbit/nodes/content_type", "_#{name.downcase}.html.erb")
   end
 
   def create_frontend
-    template "frontend.html.erb", File.join("app/views/content_type", "_#{name.downcase}.html.erb")
+    template "frontend.html.erb", File.join("app/views/nodes/content_type", "_#{name.downcase}.html.erb")
   end
 
   private
