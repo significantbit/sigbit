@@ -2,5 +2,5 @@
   %td= user.email
   %td= user.created_at
   %td.text-right
-    = link_to t('common.delete'), user_path(user), method: :delete, class: 'btn btn-sm btn-danger'
+    = link_to t('common.delete'), user_path(user), method: :delete, class: 'btn btn-sm btn-danger' unless user == current_user
     = link_to t('common.edit'), edit_user_path(user), class: 'btn btn-sm btn-primary'

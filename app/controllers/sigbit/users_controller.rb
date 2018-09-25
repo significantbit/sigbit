@@ -32,6 +32,12 @@ module Sigbit
       end
     end
 
+    def destroy
+      @user = Sigbit::User.find params[:id]
+      @user.destroy
+      redirect_to users_path, success: t(".success")
+    end
+
     private
 
       def secure_params
