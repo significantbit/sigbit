@@ -6,7 +6,7 @@ module Sigbit
         #@nodes = SigbitNode.roots
         respond_to do |format|
           format.html { redirect_to root_path }
-          format.json { render json: Sigbit::Node.json_tree(Sigbit::Node.arrange(order: :position)) }
+          format.json { render json: Sigbit::Node.json_tree(Sigbit::Node.visible.arrange(order: :position)) }
         end
       end
 

@@ -1,6 +1,6 @@
 .row
   .col-md-12
-    - if node.children.present?
+    - if node.children.visible.present?
       %ul.list-group.sortable-list{data: { sort_url: node_sort_path(node) }}
         - node.children.each do |n|
           %li.list-group-item{data: { position: "#{n.position}", id: "#{n.id}"}}
