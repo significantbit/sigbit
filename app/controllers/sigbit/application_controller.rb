@@ -23,7 +23,13 @@ module Sigbit
       end
 
       def set_nodes_tree
-        @dropdown = ancestry_options(Node.arrange(order: "position")) { |i| "#{'...' * i.depth} #{i.menu_title}" }
+        @dropdown = ancestry_options(
+          Node
+            .visible
+            .arrange(order: "position")
+          ) do |i|
+              "#{'...' * i.depth} #{i.menu_title}"
+            end
         #dropdown.unshift(["- Ingen förälder -", nil])
       end
 
