@@ -16,7 +16,7 @@ class ContentTypeGenerator < Rails::Generators::NamedBase
   end
 
   def create_frontend
-    template "frontend.html.erb", File.join("app/views/nodes/content_type", "_#{name.downcase}.html.erb")
+    template "frontend.html.erb", File.join("app/views/content_type", "_#{name.downcase}.html.erb")
   end
 
   private
