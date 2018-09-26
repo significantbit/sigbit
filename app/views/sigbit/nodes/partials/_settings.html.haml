@@ -5,5 +5,4 @@
     = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: 'Välj under vilken "förälder" (huvudsida) som sidan ska ligga.'
     = form.input :visible_in_menu, hint: 'Kryssa i om sidan ska synas i huvudmeny och sidfotsmeny.'
     = form.input :show_in_footer, hint: 'Kryssa i om sidan ska synas i som huvudkategori i sidfoten.'
-    = form.input :parent_id, collection: Sigbit::Node.all, label_method: :menu_title
 
