@@ -23,6 +23,10 @@ module Sigbit
         end
       end
 
+      def mountable_in_tree?
+        true
+      end
+
       def search_attributes(*args)
         define_method :searchable_data do
           args.map { |x| ActionView::Base.full_sanitizer.sanitize(self.send(x)) }
@@ -56,5 +60,6 @@ module Sigbit
     def should_show_up_in_menus
       true
     end
+
   end
 end
