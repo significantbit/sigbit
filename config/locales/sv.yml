@@ -2,21 +2,27 @@ sv:
   activerecord:
     models:
       sigbit/node: Sida
-      content_type/startpage: Startsida
     attributes:
       sigbit/node:
         menu_title: Menynamn
+        parent_id: Förälder
+        published_at: Publiceringsdatum
+        visible_in_menu: Synlig i menyer
+        show_in_footer: Visa i sidfot
+        meta_keywords: Meta nyckelord
+        meta_description: Meta beskrivning
   sigbit:
     common:
       delete: Radera
       edit: Redigera
   sigbit:
     nodes:
-      form:
-        page_content: Sidans innehåll
-        seo: SEO
-        sorting: Sortera undersidor
-        settings: Inställningar
+      nodes:
+        form:
+          page_content: Sidans innehåll
+          seo: SEO
+          sorting: Sortera undersidor
+          settings: Inställningar
     users:
       index:
         title: Alla användare
