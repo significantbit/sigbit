@@ -34,5 +34,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-i18n', '~> 5.1.1'
   s.add_dependency "publishable", '~> 1.0.4'
   s.add_dependency 'meta-tags', '~> 2.10.0'
+  s.add_dependency 'rails-settings-cached', '~> 0.7.1'
   s.add_development_dependency "pg", '~> 1.0'
 end
