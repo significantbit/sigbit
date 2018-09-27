@@ -9,6 +9,7 @@
 //= require plugins/word_paste.min
 //= require plugins/paragraph_format.min
 //= require plugins/lists.min
+//= require plugins/quote.min.js
 //= require moment
 //= require moment/sv.js
 //= require tempusdominus-bootstrap-4.js
@@ -106,7 +107,8 @@ $(document).on('turbolinks:load', function() {
       'insertTable',
       'insertLink',
       'formatOL',
-      'formatUL'
+      'formatUL',
+      'quote'
     ],
 
     linkEditButtons: ['linkOpen', 'linkStyle', 'linkEdit', 'linkRemove'],
