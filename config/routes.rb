@@ -8,6 +8,7 @@ Sigbit::Engine.routes.draw do
     end
 
     resources :users
+    resource :content_type_config
     root to: "dashboards#show"
   end
 end

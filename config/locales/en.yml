@@ -33,7 +33,11 @@ en:
     common:
       delete: Delete
       edit: Edit
+      save: Save
   sigbit:
+    content_type_configs:
+      show:
+        title: Content type settings
     nodes:
       new_form:
         title: Create new page

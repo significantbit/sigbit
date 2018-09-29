@@ -10,6 +10,8 @@
     = yield :navbar
     %ul.nav.navbar-nav
       %li.nav-item
+        = link_to t('sigbit.content_type_configs.show.title'), sigbit.content_type_config_path, class: 'nav-link'
+      %li.nav-item
         = link_to t('sigbit.nodes.new_form.title'), sigbit.new_node_path, class: 'nav-link'
       %li.nav-item
         = link_to t('sigbit.users.new.title'), sigbit.users_path, class: 'nav-link'

@@ -1,0 +1,21 @@
+.card.card-sheet-down
+  .card-body
+    %h3= t('.title')
+    = form_tag({url: content_type_config_path}, {method: :put}) do
+      %table.table.table-sm.table-bordered.table-striped.mb-4
+        %thead
+          %tr
+            %th
+            - Sigbit::Contentable.included_in.map { |c| c.to_s }.each do |c|
+              %th.text-center
+                %small= c.demodulize
+        %tbody
+          - Sigbit::Contentable.included_in.map { |c| c.to_s }.each do |c|
+            %tr
+              %th
+                %small
+                  %strong= c.demodulize
+              - Sigbit::Contentable.included_in.map { |c| c.to_s }.each do |ct|
+                %th.text-center
+                  %input{type: :checkbox, name: "data[#{c}][]", value: ct, checked: @config.data.dig(c)&.include?(ct) }
+      = submit_tag 'Save', class: 'btn btn-primary'

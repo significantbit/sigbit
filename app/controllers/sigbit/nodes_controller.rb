@@ -10,6 +10,11 @@ module Sigbit
 
     def new
       @node = Sigbit::NewNodeForm.new parent_id: params[:parent_id]
+      if params[:parent_id].present?
+        @parent = Sigbit::Node.find params[:parent_id]
+      else
+        @parent = Sigbit::Node.roots.first
+      end
       render "_new_form"
     end
 

@@ -22,6 +22,11 @@ module Sigbit
       contentable.content_type_icon
     end
 
+    def available_content_types
+      ctc = Sigbit::ContentTypeConfig.first.data
+      ctc[contentable.class.to_s]
+    end
+
     def link_to_page
       request = Sigbit::Current.request
       [

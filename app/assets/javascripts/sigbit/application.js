@@ -21,6 +21,7 @@
 //= require attachinary
 //= require sigbit/attachinary_template
 //= require sigbit/webpacker/pack
+//= require sigbit/content_type
 
 $(document).on('turbolinks:load', function() {
   $('.attachinary-input').attachinary();
