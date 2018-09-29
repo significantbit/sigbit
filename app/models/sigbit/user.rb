@@ -4,5 +4,7 @@ module Sigbit
     # :confirmable, :lockable, :timeoutable and :omniauthable
     devise :database_authenticatable,
            :recoverable, :rememberable, :trackable, :validatable
+
+    has_attachment :image
   end
 end

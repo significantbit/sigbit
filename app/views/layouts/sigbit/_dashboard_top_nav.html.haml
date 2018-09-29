@@ -13,3 +13,26 @@
         = link_to 'Skapa sida', sigbit.new_node_path, class: 'nav-link'
       %li.nav-item
         = link_to 'Användare', sigbit.users_path, class: 'nav-link'
+      %li.nav-item.dropdown.user-nav
+        %a.nav-link.p-1{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
+          - if current_user.image.present?
+            = cl_image_tag current_user.image.path, size: '34x34', crop: :fill, gravity: :face, class: 'avatar rounded-circle'
+          - else
+            = image_tag 'sigbit/dummy-avatar.png', width: 34, height: 34, class: 'avatar rounded-circle'
+          /= cl_image_tag current_user.image.path, size: '34x34', crop: :fill, gravity: :face, class: 'avatar rounded-circle'
+          %span.caret.caret-light
+        %ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
+          %li.dropdown-item.text-center
+            .card
+              .card-body
+                - if current_user.image.present?
+                  = cl_image_tag current_user.image.path, size: '120x120', crop: :fill, gravity: :face, class: 'avatar img-rounded pb-1'
+                - else
+                  = image_tag 'sigbit/dummy-avatar.png', width: 120, height: 120, class: 'avatar img-rounded pb-1'
+                %p.m0.p-1.d-block= current_user.email
+              .card-footer.d-flex.justify-content-between
+                %div
+                  = link_to t('.edit'), edit_user_path(current_user), class: 'btn'
+                %div
+                  = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
+                  /%a.btn{:href => "002_dashboard_2.html#"} Log Out
