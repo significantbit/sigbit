@@ -1,5 +1,10 @@
 module Sigbit
   class ApplicationController < ActionController::Base
+    include Pundit
+
+    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+    after_action :verify_authorized
     helper RRT::Engine.helpers
     helper Attachinary::Engine.helpers
     protect_from_forgery with: :exception
@@ -16,6 +21,11 @@ module Sigbit
     end
 
     private
+
+      def user_not_authorized
+        flash[:alert] = t("sigbit.common.not_authorized")
+        redirect_to(request.referrer || sigbit.root_path)
+      end
 
       def set_locale
         @body_class = "with-sidebar show-sidebar"

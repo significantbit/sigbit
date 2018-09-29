@@ -2,6 +2,7 @@ module Sigbit
   class NodesController < Sigbit::ApplicationController
     def index
       #@nodes = SigbitNode.roots
+      authorize Sigbit::Node
       respond_to do |format|
         format.html { redirect_to root_path }
         format.json { render json: Sigbit::Node.json_tree(Sigbit::Node.visible.arrange(order: :position)) }
@@ -10,6 +11,7 @@ module Sigbit
 
     def new
       @node = Sigbit::NewNodeForm.new parent_id: params[:parent_id]
+      authorize Sigbit::Node
       if params[:parent_id].present?
         @parent = Sigbit::Node.find params[:parent_id]
       else
@@ -20,7 +22,7 @@ module Sigbit
 
     def create
       @node = Sigbit::NewNodeForm.new secure_params
-
+      authorize Sigbit::Node
       if @node.save
         redirect_to edit_node_path(@node.id), notice: t(".success")
       else
@@ -30,11 +32,13 @@ module Sigbit
 
     def edit
       @node = Sigbit::Node.find params[:id]
+      authorize @node
       render "_form"
     end
 
     def update
       @node = Sigbit::Node.find params[:id]
+      authorize @node
       if @node.update secure_params
         redirect_to edit_node_path(@node.id), notice: t(".success")
       else
@@ -44,6 +48,7 @@ module Sigbit
 
     def destroy
       @node = Sigbit::Node.find params[:id]
+      authorize @node
       @node.destroy
       redirect_to root_path
     end

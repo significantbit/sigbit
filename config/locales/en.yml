@@ -34,7 +34,8 @@ en:
       delete: Delete
       edit: Edit
       save: Save
-  sigbit:
+      not_authorized: You are not authorized.
+      success: Save successful.
     content_type_configs:
       show:
         title: Content type settings

@@ -1,5 +1,6 @@
 module Sigbit
-  class User < ApplicationRecord
+  class User < Sigbit::ApplicationRecord
+    rolify role_cname: "Sigbit::Role"
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     devise :database_authenticatable,

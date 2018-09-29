@@ -5,20 +5,20 @@ module Sigbit
       skip_before_action :verify_authenticity_token
 
       def update
-          if @node.published?
-            @node.unpublish!
-            @node.descendants.each(&:unpublish!)
-          else
-            @node.publish!
-            @node.descendants.each(&:publish!)
-          end
+        authorize "Sigbit::Nodes::Publish".to_sym
+        if @node.published?
+          @node.unpublish!
+          @node.descendants.each(&:unpublish!)
+        else
+          @node.publish!
+          @node.descendants.each(&:publish!)
+        end
       end
 
       private
-      def get_node
-        @node = Node.find params[:node_id]
-      end
+        def get_node
+          @node = Node.find params[:node_id]
+        end
     end
   end
 end
-
