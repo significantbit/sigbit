@@ -1,19 +1,31 @@
 en:
+  activerecord:
+    models:
+      sigbit/user: User
+    attributes:
+      sigbit/user:
+        email: Email address
+        password: Password
+        password_confirmation: Confirm password
+        image: Profile image
   sigbit:
     common:
-      delete: Radera
-      edit: Redigera
+      delete: Delete
+      edit: Edit
   sigbit:
     nodes:
       form:
-        sorting: Sort stuff
+        page_content: Page content
+        seo: Meta (SEO)
+        sorting: Sort
+        settings: Settings
     users:
       index:
-        title: Alla användare
+        title: All users
       edit:
-        title: Redigera användare
+        title: Edit user
       new:
-        title: Ny användare
+        title: Create new user
       partials:
         header:
-          create_button: Ny användare
+          create_button: :sigbit.users.new.title

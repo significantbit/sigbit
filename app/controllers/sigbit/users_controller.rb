@@ -12,9 +12,9 @@ module Sigbit
     def create
       @user = Sigbit::User.new secure_params
       if @user.save
-        redirect_to users_path, success: t(".success")
+        redirect_to users_path, notice: t(".success")
       else
-        render :new
+        render "_form"
       end
     end
 
@@ -26,16 +26,16 @@ module Sigbit
     def update
       @user = Sigbit::User.find params[:id]
       if @user.update secure_params
-        redirect_to users_path, success: t(".success")
+        redirect_to edit_user_path(@user), notice: t(".success")
       else
-        render :new
+        render "_form"
       end
     end
 
     def destroy
       @user = Sigbit::User.find params[:id]
       @user.destroy
-      redirect_to users_path, success: t(".success")
+      redirect_to users_path, notice: t(".success")
     end
 
     private
