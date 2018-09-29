@@ -10,9 +10,9 @@
     = yield :navbar
     %ul.nav.navbar-nav
       %li.nav-item
-        = link_to 'Skapa sida', sigbit.new_node_path, class: 'nav-link'
+        = link_to t('sigbit.nodes.new_form.title'), sigbit.new_node_path, class: 'nav-link'
       %li.nav-item
-        = link_to 'Användare', sigbit.users_path, class: 'nav-link'
+        = link_to t('sigbit.users.new.title'), sigbit.users_path, class: 'nav-link'
       %li.nav-item.dropdown.user-nav
         %a.nav-link.p-1{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
           - if current_user.image.present?
