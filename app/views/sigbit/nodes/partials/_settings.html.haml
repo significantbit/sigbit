@@ -1,8 +1,8 @@
 .row
   .col-md-12
-    = form.input :published_at, as: :date_time_picker, hint: 'Lämna fältet tomt om sidan ska förbli "ej publicerad".'
-    = form.input :menu_title
-    = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: 'Välj under vilken "förälder" (huvudsida) som sidan ska ligga.'
-    = form.input :visible_in_menu, hint: 'Kryssa i om sidan ska synas i huvudmeny och sidfotsmeny.'
-    = form.input :show_in_footer, hint: 'Kryssa i om sidan ska synas i som huvudkategori i sidfoten.'
+    = form.input :published_at, as: :date_time_picker, hint: t('activerecord.attributes.sigbit/node.published_at_hint')
+    = form.input :menu_title, hint: t('activerecord.attributes.sigbit/node.menu_title_hint')
+    = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: t('activerecord.attributes.sigbit/node.parent_hint')
+    = form.input :visible_in_menu, hint: t('activerecord.attributes.sigbit/node.visible_in_menu_hint')
+    = form.input :show_in_footer, hint: t('activerecord.attributes.sigbit/node.show_in_footer_hint')
 

@@ -2,18 +2,41 @@ en:
   activerecord:
     models:
       sigbit/user: User
+      sigbit/node: Page
     attributes:
+      sigbit/node:
+        parent_id: Parent
+        parent_hint: Choose under which page the page will be located
+        contentable: Content type
+        contentable_hint: The content type chooses what type of page you want to create
+        menu_title: Menu title
+        menu_title_hint: The menu title is the name of the page when seen in menus
+        published_at: Published at
+        published_at_hint: Leave this empty if the page should not be published
+        visible_in_menu: Visible in menus
+        visible_in_menu_hint: Check this if the page should show up in menus
+        show_in_footer: Show in footer
+        show_in_footer_hint: Check this if the page should show up in the footer
+
       sigbit/user:
         email: Email address
         password: Password
         password_confirmation: Confirm password
         image: Profile image
+        created_at: Created
+        updated_at: Updated
+        confirmed_at: Confirmed
+        sign_in_count: Logins
+        current_sign_in_at: Current login at
+        last_sign_in_at: Last login at
   sigbit:
     common:
       delete: Delete
       edit: Edit
   sigbit:
     nodes:
+      new_form:
+        title: Create new page
       form:
         page_content: Page content
         seo: Meta (SEO)

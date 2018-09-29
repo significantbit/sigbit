@@ -2,8 +2,17 @@
   .card-body
     %h2= t('.title')
     = simple_form_for @node do |form|
-      = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: 'Välj under vilken "förälder" (huvudsida) som sidan ska ligga.'
+      = form.input :parent_id, collection: @dropdown, |
+          label: t('activerecord.attributes.sigbit/node.parent_id'), |
+          include_blank: false, |
+          disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], |
+          hint: t('activerecord.attributes.sigbit/node.parent_hint')
 
-      = form.input :menu_title, label: t('activerecord.attributes.node.menu_title')
-      = form.input :contentable_type, collection: Sigbit::Contentable.included_in.select {|c| c.mountable_in_tree? }.map { |c| [I18n.t(c.model_name.i18n_key, scope: [:activerecord, :models]), c] }.sort, include_blank: false, label: I18n.t('activerecord.attributes.node.contentable')
+      = form.input :contentable_type, |
+          collection: Sigbit::Contentable.included_in.select { |c| c.mountable_in_tree? }.map { |c| [I18n.t(c.model_name.i18n_key, scope: [:activerecord, :models]), c] }.sort, include_blank: false, label: t('activerecord.attributes.node.contentable'), hint: t('activerecord.attributes.sigbit/node.contentable_hint')
+
+      = form.input :menu_title, |
+          label: t('activerecord.attributes.sigbit/node.menu_title'), |
+          hint: t('activerecord.attributes.sigbit/node.menu_title_hint')
+
       = form.button :submit, class: 'btn btn-primary mt-4'

@@ -1,9 +1,0 @@
-en:
-  activerecord:
-    models:
-      node: Sida
-    attributes:
-      node:
-        contentable: Content type
-      user:
-        email: Epostadress
