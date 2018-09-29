@@ -14,12 +14,13 @@
 //= require moment/sv.js
 //= require tempusdominus-bootstrap-4.js
 //= require sigbit/html5sortable
-//= require jquery.ui.widget
-//= require jquery.iframe-transport
-//= require jquery.fileupload
+//= require sigbit/jquery.ui.widget
+//= require sigbit/jquery.iframe-transport
+//= require sigbit/jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require sigbit/attachinary_template
+//= require sigbit/webpacker/pack
 
 $(document).on('turbolinks:load', function() {
   $('.attachinary-input').attachinary();

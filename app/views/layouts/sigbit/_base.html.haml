@@ -22,7 +22,7 @@
     = yield :javascript
     = cloudinary_js_config
     = yield :head
-    = stylesheet_pack_tag 'admin/nodes/index'
-    = javascript_pack_tag 'admin/nodes/index'
+    /= stylesheet_pack_tag 'admin/nodes/index'
+    /= javascript_pack_tag 'admin/nodes/index'
   %body{:class => @body_class, "data-current-node" => @node ? @node.id : 0, "data-js-libs" => "bootstrap fitie metis forms sidenav prism clipboard bs-switch #{yield :js_libs}", "data-locale" => I18n.locale}
     = yield
