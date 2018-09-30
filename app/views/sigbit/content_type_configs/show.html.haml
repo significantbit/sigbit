@@ -17,5 +17,5 @@
                   %strong= c.demodulize
               - Sigbit::Contentable.included_in.map { |c| c.to_s }.each do |ct|
                 %th.text-center
-                  %input{type: :checkbox, name: "data[#{c}][]", value: ct, checked: @config.data.dig(c)&.include?(ct) }
+                  %input{type: :checkbox, name: "data[#{c}][]", value: ct, checked: @config.data != '{}' ? @config.data.dig(c)&.include?(ct) : false }
       = submit_tag 'Save', class: 'btn btn-primary'

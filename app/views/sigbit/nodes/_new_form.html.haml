@@ -10,7 +10,7 @@
           input_html: { id: 'new_form_parent_id_select' }
 
       = form.input :contentable_type, |
-          collection: Sigbit::Contentable.included_in.select { |c| c.mountable_in_tree? }.map { |c| [I18n.t(c.model_name.i18n_key, scope: [:activerecord, :models]), c] }.sort, disabled: Sigbit::Contentable.included_in.select { |c| c.mountable_in_tree? } - (@parent&.available_content_types&.map { |a| a.constantize } || []), include_blank: false, label: t('activerecord.attributes.node.contentable'), hint: t('activerecord.attributes.sigbit/node.contentable_hint')
+          collection: Sigbit::Contentable.included_in.select { |c| c.mountable_in_tree? }.map { |c| [I18n.t(c.model_name.i18n_key, scope: [:activerecord, :models]), c] }.sort, disabled: @parent.present? ? Sigbit::Contentable.included_in.select { |c| c.mountable_in_tree? } - (@parent&.available_content_types&.map { |a| a.constantize } || []) : [], include_blank: false, label: t('activerecord.attributes.node.contentable'), hint: t('activerecord.attributes.sigbit/node.contentable_hint')
 
       = form.input :menu_title, |
           label: t('activerecord.attributes.sigbit/node.menu_title'), |
