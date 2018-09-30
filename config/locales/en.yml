@@ -47,6 +47,8 @@ en:
         seo: Meta (SEO)
         sorting: Sort
         settings: Settings
+      update:
+        success: Successfully saved.
     users:
       index:
         title: All users
