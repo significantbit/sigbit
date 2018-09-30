@@ -19,6 +19,13 @@ class ContentTypeGenerator < Rails::Generators::NamedBase
     template "frontend.html.erb", File.join("app/views/content_type", "_#{name.downcase}.html.erb")
   end
 
+  #def create_translations
+  #  data = YAML::load_file('config/locales/en.yml')
+  #  data['en']['activerecord']['models']["content_type/#{name.downcase}"] = "#{name.downcase} (generated translation)"
+  #  data['en']['activerecord']['attributes']["content_type/#{name.downcase}"] = {}
+  #  File.open('config/locales/en.yml', 'w') { |f| f.write data.to_yaml }
+  #end
+
   private
     def class_name
       name.classify

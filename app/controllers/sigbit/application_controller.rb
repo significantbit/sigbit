@@ -4,7 +4,6 @@ module Sigbit
 
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-    after_action :verify_authorized
     helper RRT::Engine.helpers
     helper Attachinary::Engine.helpers
     protect_from_forgery with: :exception
@@ -12,8 +11,8 @@ module Sigbit
     before_action :set_locale
     before_action :set_nodes_tree
     before_action :set_current_attributes
+    after_action :verify_authorized
 
-    add_flash_types :success, :error
     layout "layouts/sigbit/sidenav"
 
     def default_url_options
