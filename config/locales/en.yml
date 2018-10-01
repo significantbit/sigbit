@@ -39,9 +39,13 @@ en:
     content_type_configs:
       show:
         title: Content type settings
+    dashboards:
+      show:
+        no_nodes_information: You currently have no nodes in your page tree. To function, the site should have ATLEAST one page.
     nodes:
       new_form:
         title: Create new page
+        no_content_types_available: There are no content types available. Go generate something.
       form:
         page_content: Page content
         seo: Meta (SEO)

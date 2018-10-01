@@ -1,1 +1,5 @@
 %h2= Sigbit::config.app_name
+
+- if Sigbit::Node.count == 0
+  .alert.alert-info
+    = t('.no_nodes_information')
