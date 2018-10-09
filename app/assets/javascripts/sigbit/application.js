@@ -76,8 +76,9 @@ $(document).on('turbolinks:load', function() {
     heightMin: 200,
     paragraphFormat: {
       N: 'Normal',
-      H3: 'Underrubrik',
-      H4: 'Underunderrubrik'
+      H3: 'Rubrik 1',
+      H4: 'Rubrik 2',
+      H5: 'Rubrik 3'
     },
     tableStyles: {
       'table table-striped table-bordered': 'Normal'
