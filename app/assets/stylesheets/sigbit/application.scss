@@ -7,7 +7,13 @@
 
  @import "froala_editor.min";
  @import "froala_style";
- @import "plugins/table.min";
+ @import 'plugins/code_view.min.css';
+ @import 'plugins/help.min.css';
+ @import 'plugins/image_manager.min.css';
+ @import 'plugins/image.min.css';
+ @import 'plugins/line_breaker.min.css';
+ @import 'plugins/table.min.css';
+ @import 'plugins/video.min.css';
  @import "tempusdominus-bootstrap-4";
 
 .logo {

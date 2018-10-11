@@ -4,12 +4,29 @@
 //= require sigbit/rrt
 //= require cocoon
 //= require froala_editor.min.js
-//= require plugins/table.min.js
+//= require plugins/align.min.js
+//= require plugins/code_beautifier.min.js
+//= require plugins/code_view.min.js
+//= require plugins/entities.min.js
+//= require plugins/file.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/help.min.js
+//= require plugins/image.min.js
+//= require plugins/image_manager.min.js
+//= require plugins/inline_style.min.js
+//= require plugins/line_breaker.min.js
 //= require plugins/link.min.js
-//= require plugins/word_paste.min
-//= require plugins/paragraph_format.min
-//= require plugins/lists.min
+//= require plugins/lists.min.js
+//= require plugins/paragraph_format.min.js
+//= require plugins/paragraph_style.min.js
 //= require plugins/quote.min.js
+//= require plugins/table.min.js
+//= require plugins/special_characters.min.js
+//= require plugins/url.min.js
+//= require plugins/video.min.js
+//= require plugins/word_paste.min
+
 //= require moment
 //= require moment/sv.js
 //= require tempusdominus-bootstrap-4.js
@@ -22,6 +39,8 @@
 //= require sigbit/attachinary_template
 //= require sigbit/webpacker/pack
 //= require sigbit/content_type
+//= require sigbit/froala_config
+//= require sigbit/datepicker_config
 
 $(document).on('turbolinks:load', function() {
   $('.attachinary-input').attachinary();
@@ -52,20 +71,7 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
-  $('.datetime-picker').datetimepicker({
-    locale: 'sv',
-    keepOpen: true
-  });
-  $('.date-picker').datetimepicker({
-    locale: 'sv',
-    format: 'L',
-    keepOpen: true
-  });
-  $('.time-picker').datetimepicker({
-    locale: 'sv',
-    format: 'LT',
-    keepOpen: true
-  });
+
 
   $('#accordion')
     .find('button')
@@ -73,52 +79,7 @@ $(document).on('turbolinks:load', function() {
       event.preventDefault();
     });
 
-  $('.wysiwyg-editor').froalaEditor({
-    key: 'QA4A3A3A15hC7D6E6C5D2E3B2C6A6D6ctigoehvogD-11ogF4I-7k==',
-    heightMin: 200,
-    paragraphFormat: {
-      N: 'Normal',
-      H3: 'Underrubrik',
-      H4: 'Underunderrubrik'
-    },
-    tableStyles: {
-      'table table-striped table-bordered': 'Normal'
-    },
-    tableEditButtons: [
-      'tableHeader',
-      'tableRemove',
-      '|',
-      'tableRows',
-      'tableColumns',
-      '-',
-      'tableStyle',
-      'tableCells',
-      'tableCellHorizontalAlign'
-    ],
 
-    toolbarButtons: [
-      'undo',
-      'redo',
-      '|',
-      'bold',
-      'italic',
-      'underline',
-      'strikeThrough',
-      'paragraphFormat',
-      'clearFormatting',
-      'insertTable',
-      'insertLink',
-      'formatOL',
-      'formatUL',
-      'quote'
-    ],
-
-    linkEditButtons: ['linkOpen', 'linkStyle', 'linkEdit', 'linkRemove'],
-
-    linkAttributes: {
-      class: 'Class'
-    }
-  });
 
   var url = document.location.toString();
   if (url.match('#')) {
