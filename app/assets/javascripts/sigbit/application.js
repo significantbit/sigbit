@@ -6,6 +6,10 @@
 //= require froala_editor.min.js
 //= require plugins/table.min.js
 //= require plugins/link.min.js
+//= require plugins/video.min.js
+//= require plugins/draggable.min.js
+//= require plugins/image.min.js
+//= require plugins/image_manager.min.js
 //= require plugins/word_paste.min
 //= require plugins/paragraph_format.min
 //= require plugins/lists.min
@@ -109,14 +113,26 @@ $(document).on('turbolinks:load', function() {
       'insertLink',
       'formatOL',
       'formatUL',
-      'quote'
+      'quote',
+      'insertImage'
     ],
 
     linkEditButtons: ['linkOpen', 'linkStyle', 'linkEdit', 'linkRemove'],
 
     linkAttributes: {
       class: 'Class'
-    }
+    },
+    dragInline: false,
+    imageUploadParam: 'file',
+      imageUploadURL: '/admin/images',
+      imageUploadParsms: null,
+      ImageUploadMethod: 'POST',
+      imageManagerLoadURL: '/admin/images.json',
+      imageDefaultWidth: 0,
+      imageEditButtons: ['imageReplace', 'imageCaption', 'imageRemove', 'imageAlt'],
+
+      //pluginsEnabled: ['image', 'link', 'draggable', 'imageManager']
+
   });
 
   var url = document.location.toString();
