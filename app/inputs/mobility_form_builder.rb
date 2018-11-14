@@ -4,7 +4,7 @@ class MobilityFormBuilder < SimpleForm::FormBuilder
       super(attribute_name,
         options.merge(
           input_html: {
-            placeholder: @object.send(attribute_name),
+            title: @object.send(attribute_name),
             value: @object.send(
               attribute_name,
               fallback: false,
