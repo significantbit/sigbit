@@ -31,3 +31,9 @@
     }
   }
 }
+
+.attachinary.required {
+  .invalid-feedback {
+    display: block !important;
+  }
+}
