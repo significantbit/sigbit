@@ -4,5 +4,4 @@
     = form.input :menu_title, hint: t('activerecord.attributes.sigbit/node.menu_title_hint')
     = form.input :parent_id, collection: @dropdown, include_blank: false, disabled: @node.persisted? ? [@node.id] + @node.descendant_ids : [], input_html: { }, hint: t('activerecord.attributes.sigbit/node.parent_hint')
     = form.input :visible_in_menu, hint: t('activerecord.attributes.sigbit/node.visible_in_menu_hint')
-    = form.input :show_in_footer, hint: t('activerecord.attributes.sigbit/node.show_in_footer_hint')
 
