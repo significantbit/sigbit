@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "simple_form", "~> 4.0.1"
   s.add_dependency 'devise', "~> 4.5.0"
   s.add_dependency 'cocoon', '~> 1.2.11'
-  s.add_dependency 'wysiwyg-rails', '~> 2.9.1'
+  s.add_dependency 'wysiwyg-rails', '~> 2.8.5'
   s.add_dependency 'kaminari', '~> 1.1.1'
   s.add_dependency 'momentjs-rails', '~> 2.20.1'
   s.add_dependency 'bootstrap4-datetime-picker-rails', '~> 0.1.8'
