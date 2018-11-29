@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    sigbit (0.1.22)
+    sigbit (0.1.23)
       acts_as_list (~> 0.9.16)
       ancestry (~> 3.0.2)
       bootstrap4-datetime-picker-rails (~> 0.1.8)
@@ -30,7 +30,7 @@ PATH
       rolify (~> 5.2.0)
       sass-rails (~> 5.0)
       simple_form (~> 4.0.1)
-      wysiwyg-rails (~> 2.8.5)
+      wysiwyg-rails (~> 2.9.1)
 
 GEM
   remote: https://rubygems.org/
@@ -257,7 +257,7 @@ GEM
     thor (0.20.0)
     thread (0.2.2)
     thread_safe (0.3.6)
-    tilt (2.0.8)
+    tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unf (0.1.4)
@@ -269,7 +269,7 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    wysiwyg-rails (2.8.5)
+    wysiwyg-rails (2.9.1)
       railties (>= 3.2, < 6.0)
 
 PLATFORMS
