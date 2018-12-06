@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    sigbit (0.1.23)
+    sigbit (0.1.24)
       acts_as_list (~> 0.9.16)
       ancestry (~> 3.0.2)
       bootstrap4-datetime-picker-rails (~> 0.1.8)
@@ -109,7 +109,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    hamlit (2.9.1)
+    hamlit (2.9.2)
       temple (>= 0.8.0)
       thor
       tilt
