@@ -1,0 +1,65 @@
+sv:
+  activerecord:
+    models:
+      sigbit/user: Användare
+      sigbit/node: Sida
+    attributes:
+      sigbit/node:
+        parent_id: Förälder
+        parent_hint: Välj vilken sida som ska vara förälder
+        contentable: Sidtyp
+        contentable_hint: Vilken typ av sida du vill skapa
+        menu_title: Titel i menyer
+        menu_title_hint: Detta är vad sidan heter när den syns i menyer
+        published_at: Publicerad
+        published_at_hint: Lämna tomt för att inte publicera sidan
+        visible_in_menu: Synlig i menyer
+        visible_in_menu_hint: Bocka i för att inte visa sidan i menyer
+        show_in_footer: Visa i sidfot
+        show_in_footer_hint: Bocka i för att visa sidan i sidfoten
+
+      sigbit/user:
+        email: Epostadress
+        password: Lösenord
+        password_confirmation: Bekräfta lösenord
+        image: Profilbild
+        created_at: Skapad
+        updated_at: Uppdaterad
+        confirmed_at: Bekräftad
+        sign_in_count: Inloggningar
+        current_sign_in_at: Inloggad
+        last_sign_in_at: Senast inloggad
+  sigbit:
+    common:
+      delete: Radera
+      edit: Redigera
+      save: Spara
+      not_authorized: Du har inte behörighet
+      success: Sparad!
+    content_type_configs:
+      show:
+        title: Sidtypsinställningar
+    dashboards:
+      show:
+        no_nodes_information: Du har inte skapat några sidor. För att sajten ska fungera behöver du minst en sida.
+    nodes:
+      new_form:
+        title: Skapa ny sida
+        no_content_types_available: Det finns inga sidtyper.
+      form:
+        page_content: Sidinnehåll
+        seo: Metadata (SEO)
+        sorting: Sortering
+        settings: Inställningar
+      update:
+        success: Sparad!
+    users:
+      index:
+        title: Alla användare
+      edit:
+        title: Redigera användare
+      new:
+        title: Skapa ny användare
+      partials:
+        header:
+          create_button: :sigbit.users.new.title
