@@ -37,7 +37,6 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require sigbit/attachinary_template
-//= require sigbit/webpacker/pack
 //= require sigbit/content_type
 //= require sigbit/config/froala_config
 //= require sigbit/config/datepicker_config

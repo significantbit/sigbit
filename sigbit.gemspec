@@ -36,5 +36,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'meta-tags', '~> 2.10.0'
   s.add_dependency 'rolify', '~> 5.2.0'
   s.add_dependency 'pundit', '~> 2.0.0'
+  s.add_dependency 'webpacker', '~> 4.0.2'
   s.add_development_dependency "pg", '~> 1.0'
 end
