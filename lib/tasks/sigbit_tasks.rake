@@ -11,8 +11,10 @@ namespace :sigbit do
     task compile: [:yarn_install, :environment] do
       Webpacker.with_node_env("production") do
           if Sigbit.webpacker.commands.compile
+            puts "Compile ok."
             # Successful compilation!
           else
+            puts "Compile error."
             # Failed compilation
             exit!
           end
