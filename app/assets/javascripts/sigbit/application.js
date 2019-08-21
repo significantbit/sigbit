@@ -36,6 +36,7 @@
 //= require sigbit/jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require sigbit/webpacker/pack
 //= require sigbit/attachinary_template
 //= require sigbit/content_type
 //= require sigbit/config/froala_config
