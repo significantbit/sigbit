@@ -14,6 +14,14 @@ module Sigbit
     scope :visible, -> { where(hidden: false) }
     scope :show_in_footer, -> { where(show_in_footer: true, hidden: false) }
 
+    searchable do
+      text :title
+
+      text :data, stored: true do
+        page_type.contentable.searchable_data.map { |d| d }
+      end
+    end
+
     def contentable
       page_type.contentable
     end
@@ -48,6 +56,10 @@ module Sigbit
         keywords: meta_keywords.present? ? meta_keywords : Sigbit::config.default_meta_keywords,
         description: meta_description.present? ? meta_description : Sigbit::config.default_meta_description,
       }
+    end
+
+    def title
+      contentable.title.present? ? contentable.title : menu_title
     end
   end
 end
