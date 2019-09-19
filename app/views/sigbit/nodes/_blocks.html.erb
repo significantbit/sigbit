@@ -1,0 +1,90 @@
+<div class="col-sm-12 col-md-12 mb-3">
+  <hr/>
+  <h4 class="mb-3">Moduler</h4>
+  <div id="accordion" role="tablist" class="accordion sortable-block-list" data-sort-url="<%= admin_sort_block_path(@node.id) %>">
+    <%= form.simple_fields_for :blocks do |block| %>
+      <div class="sortable-item" id="<%= dom_id(block.object) %>" data-position="<%= block.object.position %>" data-id="<%= block.object.id %>">
+        <%= block.simple_fields_for :blockable do |blockable| %>
+          <section class="card mb-2 shadow-none border">
+            <header class="card-header p-0 d-flex align-items-center justify-content-start" id="<%= dom_id(blockable.object) %>_heading">
+              <div class="border-right d-flex align-items-center align-self-stretch handle" style="cursor: grab;">
+                <%= fa_icon_tag("sort", { class: "fa-fw mx-3" }) %>
+              </div>
+              <div class="pl-3">
+                <strong><%= blockable.object %></strong><br/>
+                <span style="font-size: 0.85em;"><%= blockable.object.title_field %></span>
+              </div>
+              <div class="ml-auto mr-3">
+                <button class="btn btn-primary mr-2" data-toggle="collapse" data-target="#<%= dom_id(blockable.object) %>_accordion" aria-expanded="false" aria-controls="<%= dom_id(blockable.object) %>_accordion" class="collapsed">
+                  <%= fa_icon_tag("pencil", { class: "fa-1x fa-fw" }) %>
+                  Redigera
+                </button>
+                <%= link_to admin_block_path(block.object), class: "btn btn-outline-danger mr-2", method: :delete, data: { confirm: 'Är du säker?'} do %>
+                  <%= fa_icon_tag("trash", { class: "fa-1x fa-fw" }) %>
+                <% end %>
+              </header>
+              <div id="<%= dom_id(blockable.object) %>_accordion" class="collapse" aria-labelledby="<%= dom_id(blockable.object) %>_heading" data-parent="#accordion">
+                <div class="card-body">
+                  <%= render blockable.object, f: blockable %>
+                </div>
+              </div>
+            </section>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <button type="button" class="btn btn-secondary btn-block btn-lg" data-toggle="modal" data-target="#chooseNewModule">
+        <%= fa_icon_tag("plus", { class: "fa-1x fa-fw mr-2" }) %>
+        Skapa ny modul
+      </button>
+    </div>
+  </div>
+  <div class="modal fade" id="chooseNewModule" tabindex="-1" role="dialog" aria-labelledby="chooseNewModuleLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span>Skapa ny modul</span>
+            <h4 class="modal-title" id="chooseNewModuleLabel">Välj typ</h4>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-dark">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pb-4">
+          <% Sigbit::Blockable.sorted_block_hash.each do |b| %>
+            <%= link_to b[0], admin_blocks_path(node_id: @node.id, blockable: b[1]), method: :post, class: 'btn btn-secondary btn-lg btn-block' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var a = sortable('.sortable-block-list', {
+        items: '.sortable-item',
+        handle: '.handle'
+      }).forEach(function(e, i) {
+        e.addEventListener('sortupdate', function(e) {
+    const data = [];
+    e.detail.origin.items.forEach(function(e, i) {
+      data.push({ id: $(e).data('id'), position: i + 1 });
+    });
+    
+    var url = $(e.target).data('sort-url');
+    $.ajax({
+      url: url,
+      type: 'PUT',
+      contentType: 'application/json',
+      data: JSON.stringify({ order: data })
+    }).then(function() {
+      if (
+        window.NodesApplication !== undefined &&
+        window.NodesApplication !== null
+      ) {
+        NodesApplication.reload();
+      }
+    });
+        });
+      });
+  </script>
