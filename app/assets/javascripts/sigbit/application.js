@@ -16,7 +16,6 @@
 //= require sigbit/webpacker/pack
 //= require sigbit/attachinary_template
 //= require sigbit/content_type
-//= require sigbit/config/froala_config
 //= require sigbit/config/datepicker_config
 //= require redactor/redactor
 //= require redactor/_langs/sv
