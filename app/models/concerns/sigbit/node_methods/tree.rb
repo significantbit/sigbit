@@ -87,6 +87,10 @@ module Sigbit
         parent.find_submenu_root(content_type)
       end
 
+      def find_root_node_for_submenu
+        return self if parent.page_type.contentable_type == "ContentType::Startpage" || parent.page_type.contentable_type == "ContentType::Container"
+      end
+
       private
 
         def symbol_to_class_name(type)
