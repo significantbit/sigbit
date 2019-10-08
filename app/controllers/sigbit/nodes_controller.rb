@@ -40,6 +40,7 @@ module Sigbit
       @node = Sigbit::Node.find params[:id]
       authorize @node
       if @node.update secure_params
+        @node.update_column(:updated_at, Time.now)
         redirect_to edit_node_path(@node.id), notice: t(".success")
       else
         render "_form"
