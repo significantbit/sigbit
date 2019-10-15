@@ -14,7 +14,7 @@ sv:
         published_at: Publicerad
         published_at_hint: Lämna tomt för att inte publicera sidan
         visible_in_menu: Synlig i menyer
-        visible_in_menu_hint: Bocka i för att inte visa sidan i menyer
+        visible_in_menu_hint: Bocka i för att sidan ska synas i menyer
         show_in_footer: Visa i sidfot
         show_in_footer_hint: Bocka i för att visa sidan i sidfoten
 
