@@ -23,6 +23,10 @@
 $(document).on('turbolinks:load', function() {
   $R('.wysiwyg-editor', { lang: 'sv' });
 
+  $('#create-new-block-btn').click(function(e) {
+    e.preventDefault();
+    a = alert('Har du sparat innan? Om du lägger till en ny modul försvinner saker du inte sparat på sidan.')
+  });
   $('.attachinary-input').attachinary();
   var a = sortable('.sortable-list', {
     items: '.list-group-item',

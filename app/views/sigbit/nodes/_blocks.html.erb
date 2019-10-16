@@ -26,7 +26,13 @@
               <div id="<%= dom_id(blockable.object) %>_accordion" class="collapse" aria-labelledby="<%= dom_id(blockable.object) %>_heading" data-parent="#accordion">
                 <div class="card-body">
                   <%= render blockable.object, f: blockable %>
-                  <%= block.input :custom_id, label: 'Ankartagg ID för länkning', placeholder: 'Ankartagg ID' %>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-inline p-3" style="background: #f4f4f4;">
+                        <%= block.input :custom_id, label: 'Ankartagg ID för länkning', placeholder: 'Ankartagg ID', input_html: { class: 'ml-3 form-control-sm bg-white'} %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -35,14 +41,14 @@
       <% end %>
     </div>
     <div>
-      <button type="button" class="btn btn-secondary btn-block btn-lg" data-toggle="modal" data-target="#chooseNewModule">
+      <button type="button" class="btn btn-secondary btn-block btn-lg" id="create-new-block-btn" data-toggle="modal" data-target="#chooseNewModule">
         <%= fa_icon_tag("plus", { class: "fa-1x fa-fw mr-2" }) %>
         Skapa ny modul
       </button>
     </div>
   </div>
   <div class="modal fade" id="chooseNewModule" tabindex="-1" role="dialog" aria-labelledby="chooseNewModuleLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <div>
@@ -54,9 +60,13 @@
           </button>
         </div>
         <div class="modal-body pb-4">
-          <% Sigbit::Blockable.sorted_block_hash.each do |b| %>
-            <%= link_to b[0], admin_blocks_path(node_id: @node.id, blockable: b[1]), method: :post, class: 'btn btn-secondary btn-lg btn-block' %>
-          <% end %>
+          <div class="row">
+            <% Sigbit::Blockable.sorted_block_hash.each do |b| %>
+              <div class="col-lg-6 mb-3">
+                <%= link_to b[0], admin_blocks_path(node_id: @node.id, blockable: b[1]), method: :post, class: 'btn btn-secondary btn-lg btn-block' %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
