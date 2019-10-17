@@ -19,9 +19,23 @@
 //= require sigbit/config/datepicker_config
 //= require redactor/redactor
 //= require redactor/_langs/sv
+//= require redactor/_plugins/table/table
 
 $(document).on('turbolinks:load', function() {
-  $R('.wysiwyg-editor', { lang: 'sv' });
+  $R('.wysiwyg-editor', {
+    lang: 'sv',
+    plugins: ['table'],
+    callbacks: {
+      inserted: function(nodes)
+      {
+        if(nodes[0].dataset.redactorType == "table") {
+          nodes[0].lastChild.classList.remove("table");
+          nodes[0].lastChild.classList.add("table");
+        }
+
+      }
+  }
+  });
 
   $('#create-new-block-btn').click(function(e) {
     e.preventDefault();
