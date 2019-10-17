@@ -24,6 +24,7 @@
 $(document).on('turbolinks:load', function() {
   $R('.wysiwyg-editor', {
     lang: 'sv',
+    formatting: ['p', 'h2', 'h3', 'h4'],
     plugins: ['table'],
     callbacks: {
       inserted: function(nodes)
