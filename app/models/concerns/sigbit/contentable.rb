@@ -33,9 +33,9 @@ module Sigbit
         end
       end
 
-      def search_description(*args)
+      def search_description(data)
         define_method :brief_description do
-          args.map { |x| ActionView::Base.full_sanitizer.sanitize(self.send(x)) }
+          ActionView::Base.full_sanitizer.sanitize(self.send(data))
         end
       end
 
@@ -50,7 +50,7 @@ module Sigbit
     end
 
     def brief_description
-      []
+      ""
     end
 
     def searchable_data
@@ -60,6 +60,5 @@ module Sigbit
     def should_show_up_in_menus
       true
     end
-
   end
 end
