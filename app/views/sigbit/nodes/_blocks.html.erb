@@ -28,8 +28,11 @@
                   <%= render blockable.object, f: blockable %>
                   <div class="row">
                     <div class="col-6">
-                      <div class="form-inline p-3" style="background: #f4f4f4;">
-                        <%= block.input :custom_id, label: 'Ankartagg ID för länkning', placeholder: 'Ankartagg ID', hint: 'Tillåtna tecken är ENDAST bokstäver och siffror. Inga specialtecken. Första tecknet måste vara en bokstav.', input_html: { class: 'ml-3 form-control-sm bg-white'} %>
+                      <div class="p-3" style="background: #f4f4f4;">
+                        <div class="form-inline">
+                          <%= block.input :custom_id, label: 'Ankartagg ID för länkning', placeholder: 'Ankartagg ID', input_html: { class: 'ml-3 form-control-sm bg-white'} %>
+                        </div>
+                        <small>Tillåtna tecken är ENDAST bokstäver och siffror. Inga specialtecken. Första tecknet måste vara en bokstav.</small>
                       </div>
                     </div>
                   </div>
