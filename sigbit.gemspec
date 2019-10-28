@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'momentjs-rails', '~> 2.20.1'
   s.add_dependency 'bootstrap4-datetime-picker-rails', '~> 0.1.8'
   s.add_dependency 'ancestry', '~> 3.0.2'
+  s.add_dependency 'wysiwyg-rails', '~> 3.0.5'
   s.add_dependency 'cloudinary', '~> 1.9.1'
   s.add_dependency 'rails-i18n', '~> 5.1.1'
   s.add_dependency "publishable", '~> 1.0.4'

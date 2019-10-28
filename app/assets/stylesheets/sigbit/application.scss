@@ -2,10 +2,12 @@
  *= require sigbit/rrt
  *= require sigbit/attachinary
  *= require sigbit/webpacker/pack
- *= require redactor/redactor
  *= require_self
  */
 
+ @import "froala_editor.min";
+ @import "froala_style.min";
+ @import "plugins/table.min";
  @import "tempusdominus-bootstrap-4";
 
 .logo {

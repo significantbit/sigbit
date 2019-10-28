@@ -443,7 +443,7 @@
             }
             else
             {
-                this.$element = $R.dom('<table>');
+                this.$element = $R.dom('<div class="table-responsive"><table></div>');
                 this.append(this.$element);
             }
         },
