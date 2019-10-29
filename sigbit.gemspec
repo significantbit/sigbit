@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "hamlit-rails", "~> 0.2.0"
   s.add_dependency "mobility", "~> 0.6.0"
   s.add_dependency "simple_form", "~> 4.0.1"
-  s.add_dependency 'devise', "~> 4.5.0"
+  s.add_dependency 'devise', ">= 4.5", "< 4.8"
   s.add_dependency 'cocoon', '~> 1.2.11'
   s.add_dependency 'wysiwyg-rails', '~> 2.8.5'
   s.add_dependency 'kaminari', '~> 1.1.1'
