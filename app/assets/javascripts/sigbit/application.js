@@ -20,6 +20,7 @@
 //= require froala_editor.min.js
 //= require plugins/table.min.js
 //= require plugins/link.min.js
+//= require plugins/paragraph_format.min.js
 $(document).on('turbolinks:load', function() {
   // $R('.wysiwyg-editor', {
   //   lang: 'sv',
@@ -44,8 +45,14 @@ $(document).on('turbolinks:load', function() {
   new FroalaEditor('.wysiwyg-editor', {
     key: 'BWC6D-16A3C1D2F1D1A5vb2EAJLQCVLUVBd1NXNRSSATEXC-8C2H2C4B3B6C2E2C4A1D1==',
     attribution: false,
-    toolbarButtons: ['bold', 'italic', 'underline', 'insertTable', 'insertLink', 'inlineClass', 'inlineStyle', 'clearFormatting'],
+    toolbarButtons: ['paragraphFormat', 'bold', 'italic', 'underline', 'insertTable', 'insertLink', 'inlineClass', 'inlineStyle', 'clearFormatting'],
     tableMultipleStyles: true,
+    paragraphFormat: {
+      N: 'Brödtext',
+      H2: 'Rubrik 2',
+      H3: 'Rubrik 3',
+      H4: 'Rubrik 4',
+    },
     events: {
       'table.inserted': function (table) {
         table.classList.remove('table', 'table-sm');
