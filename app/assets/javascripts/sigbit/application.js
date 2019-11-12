@@ -20,7 +20,11 @@
 //= require froala_editor.min.js
 //= require plugins/table.min.js
 //= require plugins/link.min.js
+//= require plugins/lists.min.js
+//= require plugins/code_view.min.js
 //= require plugins/paragraph_format.min.js
+//= require plugins/word_paste.min.js
+//= require plugins/code_beautifier.min.js
 $(document).on('turbolinks:load', function() {
   // $R('.wysiwyg-editor', {
   //   lang: 'sv',
@@ -45,8 +49,12 @@ $(document).on('turbolinks:load', function() {
   new FroalaEditor('.wysiwyg-editor', {
     key: 'BWC6D-16A3C1D2F1D1A5vb2EAJLQCVLUVBd1NXNRSSATEXC-8C2H2C4B3B6C2E2C4A1D1==',
     attribution: false,
-    toolbarButtons: ['paragraphFormat', 'bold', 'italic', 'underline', 'insertTable', 'insertLink', 'inlineClass', 'inlineStyle', 'clearFormatting'],
+    pluginsEnabled: ['paragraphFormat', 'wordPaste', 'link', 'lists', 'table', 'codeView', 'codeBeautifier'],
+    toolbarButtons: ['paragraphFormat', 'bold', 'italic', 'underline', 'formatOL', 'formatUL', 'insertTable', 'insertLink', 'inlineClass', 'inlineStyle', 'clearFormatting', 'wordPaste', 'html'],
     tableMultipleStyles: true,
+    pastePlain: true,
+    wordPasteModal: true,
+    wordPasteKeepFormatting: false,
     paragraphFormat: {
       N: 'Brödtext',
       H2: 'Rubrik 2',
