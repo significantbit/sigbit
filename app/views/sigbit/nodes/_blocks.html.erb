@@ -5,7 +5,7 @@
     <%= form.simple_fields_for :blocks do |block| %>
       <div class="sortable-item" id="<%= dom_id(block.object) %>" data-position="<%= block.object.position %>" data-id="<%= block.object.id %>">
         <%= block.simple_fields_for :blockable do |blockable| %>
-          <section class="card mb-2 shadow-none border">
+          <section class="card mb-2 shadow-none border" style="overflow: visible;">
             <header class="card-header p-0 d-flex align-items-center justify-content-start" id="<%= dom_id(blockable.object) %>_heading">
               <div class="border-right d-flex align-items-center align-self-stretch handle" style="cursor: grab;">
                 <%= fa_icon_tag("sort", { class: "fa-fw mx-3" }) %>
@@ -84,7 +84,7 @@
     e.detail.origin.items.forEach(function(e, i) {
       data.push({ id: $(e).data('id'), position: i + 1 });
     });
-    
+
     var url = $(e.target).data('sort-url');
     $.ajax({
       url: url,
