@@ -14,11 +14,13 @@ module Sigbit
     scope :visible, -> { where(hidden: false) }
     scope :show_in_footer, -> { where(show_in_footer: true, hidden: false) }
 
-    searchable do
-      text :title
+    if Rails.env.production?
+      searchable do
+        text :title
 
-      text :data, stored: true do
-        page_type.contentable.searchable_data.map { |d| d }
+        text :data, stored: true do
+          page_type.contentable.searchable_data.map { |d| d }
+        end
       end
     end
 
