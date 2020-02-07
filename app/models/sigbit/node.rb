@@ -83,7 +83,7 @@ module Sigbit
       if contentable.og_image.present?
         cl_image_path contentable.og_image, width: 1200, height: 620, fetch_format: :auto, gravity: :face, flags: 'lossy', crop: :fill
       else
-        ActionController::Base.helpers.image_url('og_image.jpg')
+        ActionController::Base.helpers.image_url("og-image-#{Sigbit.config.site}.png")
       end
     end
 
