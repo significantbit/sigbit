@@ -14,6 +14,8 @@ module Sigbit
       def to_partial_path
         self.class.to_s.underscore
       end
+
+
     end
 
     class_methods do
@@ -39,6 +41,18 @@ module Sigbit
         end
       end
 
+      def og_image(prop)
+        define_method :og_image do
+          self.send(prop)&.path
+        end
+      end
+
+      def og_description(data)
+        define_method :og_description do
+          ActionView::Base.full_sanitizer.sanitize(self.send(data))
+        end
+      end
+
     end
 
     def title
@@ -55,6 +69,14 @@ module Sigbit
 
     def searchable_data
       []
+    end
+
+    def og_image
+
+    end
+
+    def og_description
+
     end
 
     def should_show_up_in_menus

@@ -4,6 +4,7 @@ module Sigbit
     extend Mobility
     include Sigbit::NodeMethods::Tree
     include Sigbit::NodeMethods::Relations
+    include CloudinaryHelper
 
     translates :menu_title, :url, locale_accessors: true
 
@@ -56,8 +57,34 @@ module Sigbit
         reverse: true,
         title: contentable.title.present? ? contentable.title : menu_title,
         keywords: meta_keywords.present? ? meta_keywords : Sigbit::config.default_meta_keywords,
-        description: meta_description.present? ? meta_description : Sigbit::config.default_meta_description,
+        description: node_description,
+        og: {
+          type: 'Website',
+          site_name: Sigbit.config.app_name,
+          description: node_description,
+          image: node_og_image,
+          'image-width': 1200,
+          'image-height': 620
+        }
       }
+    end
+
+    def node_description
+      if meta_description.present?
+        meta_description
+      elsif contentable.og_description.present?
+        contentable.og_description
+      else
+        Sigbit::config.default_meta_description
+      end
+    end
+
+    def node_og_image
+      if contentable.og_image.present?
+        cl_image_path contentable.og_image, width: 1200, height: 620, fetch_format: :auto, gravity: :face, flags: 'lossy', crop: :fill
+      else
+        ActionController::Base.helpers.image_url('og_image.jpg')
+      end
     end
 
     def title
