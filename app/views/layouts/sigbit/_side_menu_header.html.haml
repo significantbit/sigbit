@@ -1,4 +1,4 @@
-= image_tag "sigbit/#{Sigbit::config.cms_logo || 'logo.png'}", height:50, class: 'logo'
+= image_tag "sigbit/#{Sigbit::config.cms_logo.blank? ? 'logo.png' : Sigbit::config.cms_logo}", height:50, class: 'logo'
 .navbar-header
   %button.navbar-toggler.collapsed{"aria-controls" => "menu-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#menu-content", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
