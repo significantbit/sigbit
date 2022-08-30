@@ -19,19 +19,8 @@
 //= require rrt/prettify
 //= require rrt/countTo
 //= require rrt/prism
-//= require rrt/clipboard
 //= require rrt/countdown
 //= require rrt/parallax
 
-//= require rrt/demo/data_generator
-//= require rrt/demo/chartjs
-//= require rrt/demo/dashboard
-//= require rrt/demo/easypiechart
-//= require rrt/demo/flot
-//= require rrt/demo/gmaps
-//= require rrt/demo/jqvectormap
-//= require rrt/demo/sparklines
-
-//= require rrt/inspect_mode/inspect_mode
 
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
