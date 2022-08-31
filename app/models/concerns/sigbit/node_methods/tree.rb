@@ -45,15 +45,17 @@ module Sigbit
         end
 
         def create_url
-          I18n.available_locales.each do |l|
-            Mobility.with_locale(l.to_sym) do
-              list = (ancestors + [self])
-              temp_url = "/" + list.reject(&:root?).map(&:url_friendly_slug).join("/")
-              old_translations = translations.deep_dup
-              old_translations[Mobility.locale.to_sym][:url] = temp_url
-              update_column(:translations, old_translations)
-              descendants.each do |d|
-                d.create_url
+          unless url == '/' 
+            I18n.available_locales.each do |l|
+              Mobility.with_locale(l.to_sym) do
+                list = (ancestors + [self])
+                temp_url = "/" + list.reject(&:root?).map(&:url_friendly_slug).join("/")
+                old_translations = translations.deep_dup
+                old_translations[Mobility.locale.to_sym][:url] = temp_url
+                update_column(:translations, old_translations)
+                descendants.each do |d|
+                  d.create_url
+                end
               end
             end
           end
