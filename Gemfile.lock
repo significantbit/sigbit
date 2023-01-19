@@ -90,7 +90,7 @@ GEM
       aws_cf_signer
       rest-client
     cocoon (1.2.12)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.10)
     crass (1.0.4)
     devise (4.5.0)
       bcrypt (~> 3.0)
@@ -105,8 +105,8 @@ GEM
       thread_safe
     erubi (1.7.1)
     ffi (1.9.25)
-    globalid (0.4.1)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     hamlit (2.9.0)
       temple (>= 0.8.0)
       thor
@@ -163,10 +163,12 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
-    mimemagic (0.3.2)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
-    minitest (5.11.3)
+    minitest (5.17.0)
     mobility (0.6.0)
       i18n (>= 0.6.10, < 1.1)
       request_store (~> 1.0)
@@ -253,7 +255,7 @@ GEM
     thread (0.2.2)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
